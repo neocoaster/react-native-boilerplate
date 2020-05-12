@@ -1,22 +1,16 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  Text,
-} from 'react-native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import { store, persistor } from './src/redux';
 
+import Welcome from './src/screens/Welcome';
+
 const App = () => {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <SafeAreaView>
-          <Text>
-            Hello World
-          </Text>
-        </SafeAreaView>
+        <Welcome />
       </PersistGate>
     </Provider>
   );
