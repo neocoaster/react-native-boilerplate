@@ -60,4 +60,11 @@ Library that aims to make application side effects (i.e. asynchronous things lik
 
 [Eslint](https://eslint.org/)
 Tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
-  
+
+[Axios](https://www.npmjs.com/package/axios)
+Promise based HTTP client for the browser and node.js
+
+Includes GET and POST endpoints examples. It's recommended to create a new file for each service that you want to use, for example: `postsServices`, `userServices`, `eventsServices`.
+
+[Axios Case Converter](https://www.npmjs.com/package/axios-case-converter)
+Axios transformer/interceptor that converts snake_case to camelCase, useful for converting urls from the frontend to valid ones in the backend.
