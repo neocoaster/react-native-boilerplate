@@ -4,13 +4,13 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import { store, persistor } from './src/redux';
 
-import Welcome from './src/screens/Welcome';
+import MainStackNavigator from './src/navigation/MainStackNavigator';
 
 const App = () => {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <Welcome />
+        <MainStackNavigator />
       </PersistGate>
     </Provider>
   );

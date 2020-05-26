@@ -68,3 +68,35 @@ Includes GET and POST endpoints examples. It's recommended to create a new file 
 
 [Axios Case Converter](https://www.npmjs.com/package/axios-case-converter)
 Axios transformer/interceptor that converts snake_case to camelCase, useful for converting urls from the frontend to valid ones in the backend.
+
+[React Navigation v5.x](https://reactnavigation.org/)
+Routing and navigation for your React Native apps
+
+In this repository you can find an example of how to use the Stack Navigator. For this, we are using the `createStackNavigator` method of `@react-navigation/stack` library. This method returns two React components: `Screen` and `Navigator`, which help us configure each component screen.
+You can pass several props to the `Navigator` component to configure its behavior, see the [documentation](https://reactnavigation.org/docs/stack-navigator/#props) for more details. Also, the `Screen` component supports an `options` prop to customize navigation options on a per-screen basis.
+
+There are two other types of navigators: [`Tab Navigator`](https://reactnavigation.org/docs/bottom-tab-navigator/) and [`Drawer Navigator`](https://reactnavigation.org/docs/drawer-based-navigation/), to use them you have to call the `createBottomTabNavigator` and `createDrawerNavigator` methods respectively:
+
+```
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
+```
+
+Make sure you wrap your navigator with the `NavigationContainer` component, like:
+
+```
+import { NavigationContainer } from '@react-navigation/native';
+
+const App = () => {
+  return (
+    <NavigationContainer>
+      { /* navigators here */ }
+    </NavigationContainer>
+  )
+};
+```
+
+This is a component that manages the navigation tree and contains the navigation state. It provides two important props: [`navigation`](https://reactnavigation.org/docs/navigation-prop/) and [`route`](https://reactnavigation.org/docs/route-prop/) to your screens. The first one, is generally used for navigation between screens, going back, making changes to the route's params, etc. The `route` prop is used to pass params between screens and get their name.
