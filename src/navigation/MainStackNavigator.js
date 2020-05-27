@@ -9,6 +9,7 @@ import ScreenTwo from '@screens/ScreenTwo';
 import ScreenThree from '@screens/ScreenThree';
 import SignUp from '@screens/SignUp';
 import Login from '@screens/Login';
+import DashboardTabNavigator from './DashboardTabNavigator';
 
 import { HEADER_OPTIONS } from '@constants/navigator';
 
@@ -28,6 +29,11 @@ const MainStackNavigator = () => (
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="ScreenTwo" component={ScreenTwo} />
       <Stack.Screen name="ScreenThree" component={ScreenThree} />
+      <Stack.Screen
+        name='Dashboard'
+        component={DashboardTabNavigator}
+        options={{ title: 'Dashboard' }}
+      />
     </Stack.Navigator>
   </NavigationContainer>
 );
