@@ -5,6 +5,7 @@ import NetworkError from '@screens/NetworkError';
 import Welcome from '@screens/Welcome';
 import ScreenTwo from '@screens/ScreenTwo';
 import ScreenThree from '@screens/ScreenThree';
+import DashboardTabNavigator from './DashboardTabNavigator';
 
 import { HEADER_OPTIONS } from '@constants/navigator';
 import {
@@ -25,6 +26,11 @@ const MainStackNavigator = () => (
     <Stack.Screen name={WELCOME_SCREEN} component={Welcome} />
     <Stack.Screen name={SCREEN_TWO_SCREEN} component={ScreenTwo} />
     <Stack.Screen name={SCREEN_THREE_SCREEN} component={ScreenThree} />
+    <Stack.Screen
+      name='Dashboard'
+      component={DashboardTabNavigator}
+      options={{ title: 'Dashboard' }}
+    />
   </Stack.Navigator>
 );
 
