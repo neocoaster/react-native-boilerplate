@@ -13,3 +13,7 @@ export const HEADER_BACKGROUND = '#042152';
 // ERROR STYLES
 export const ERROR_TEXT = '#e60000';
 export const ERROR_BORDER = '#ff0000';
+
+// TAB NAVIGATOR STYLES
+export const ACTIVE_TAB = '#009933';
+export const INACTIVE_TAB = '#999999';
