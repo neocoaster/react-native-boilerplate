@@ -7,7 +7,7 @@ import { Alert } from 'react-native';
 import * as constants from './constants';
 import * as actions from './actions';
 
-import exampleServices from '../../services/exampleServices';
+import exampleServices from 'Services/exampleServices';
 
 function* fetchData() {
   while (true) {

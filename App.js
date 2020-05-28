@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import { store, persistor } from './src/redux';
+import { store, persistor } from 'Redux';
 
 import MainStackNavigator from './src/navigation/MainStackNavigator';
 

@@ -2,11 +2,11 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Welcome from '../screens/Welcome';
-import ScreenTwo from '../screens/ScreenTwo';
-import ScreenThree from '../screens/ScreenThree';
+import Welcome from 'Screens/Welcome';
+import ScreenTwo from 'Screens/ScreenTwo';
+import ScreenThree from 'Screens/ScreenThree';
 
-import { HEADER_BACKGROUND, WHITE } from '../constants/colors';
+import { HEADER_BACKGROUND, WHITE } from 'Constants/colors';
 
 const Stack = createStackNavigator();
 

@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { BUTTON_BACKGROUND, WHITE } from '../../constants/colors';
+import { BUTTON_BACKGROUND, WHITE } from 'Constants/colors';
 
 export default StyleSheet.create({
   buttonContainer: {
