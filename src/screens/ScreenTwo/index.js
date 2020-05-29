@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
-import Button from 'Components/Button';
+import Button from '../../components/Button';
 
 import styles from './styles';
 
