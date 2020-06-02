@@ -7,9 +7,9 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
-import Button from 'Components/Button';
+import Button from '../../components/Button';
 
-import { fetchData } from 'Redux/appReducer/actions';
+import { fetchData } from '../../redux/appReducer/actions';
 
 import styles from './styles';
 

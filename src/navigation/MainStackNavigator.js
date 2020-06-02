@@ -2,11 +2,13 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Welcome from 'Screens/Welcome';
-import ScreenTwo from 'Screens/ScreenTwo';
-import ScreenThree from 'Screens/ScreenThree';
+import AuthLoading from '../screens/AuthLoading';
+import NetworkError from '../screens/NetworkError';
+import Welcome from '../screens/Welcome';
+import ScreenTwo from '../screens/ScreenTwo';
+import ScreenThree from '../screens/ScreenThree';
 
-import { HEADER_BACKGROUND, WHITE } from 'Constants/colors';
+import { HEADER_BACKGROUND, WHITE } from '../constants/colors';
 
 const Stack = createStackNavigator();
 
@@ -14,7 +16,7 @@ const MainStackNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName='Welcome'
+        initialRouteName='AuthLoading'
         screenOptions={{
           gestureEnabled: true, // you can enable swipe gestures, but this is not the desired behaviour in Android
           headerStyle: { backgroundColor: HEADER_BACKGROUND },
@@ -24,9 +26,19 @@ const MainStackNavigator = () => {
         }}
       >
         <Stack.Screen
+          name='AuthLoading'
+          component={AuthLoading}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='NetworkError'
+          component={NetworkError}
+          options={{ title: 'Network Error' }}
+        />
+        <Stack.Screen
           name='Welcome'
           component={Welcome}
-          options={{ title: 'Welcome Screen' }}
+          options={{ headerBackTitleVisible: false, title: 'Welcome Screen' }}
         />
         <Stack.Screen
           name='ScreenTwo'
