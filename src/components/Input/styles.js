@@ -4,15 +4,15 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import { BLACK, WHITE } from '../../constants/colors';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  input: {
+    width: 350,
+    height: 48,
     backgroundColor: WHITE,
-  },
-  text: {
+    borderRadius: 24,
+    paddingVertical: 14,
+    paddingHorizontal: 16,
     color: BLACK,
-    fontSize: RFValue(24),
-    fontWeight: 'bold',
+    fontSize: RFValue(18),
+    marginBottom: 10,
   },
 });

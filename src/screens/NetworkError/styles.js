@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 import { BLACK, WHITE } from '../../constants/colors';
 
@@ -13,13 +14,13 @@ const styles = StyleSheet.create({
   errorText: {
     color: BLACK,
     fontWeight: 'bold',
-    fontSize: 28,
+    fontSize: RFValue(28),
     marginBottom: 20,
   },
   retryText: {
     marginBottom: 20,
     color: BLACK,
-    fontSize: 20,
+    fontSize: RFValue(20),
     textAlign: 'center',
   },
 });

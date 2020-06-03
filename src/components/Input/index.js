@@ -1,0 +1,55 @@
+import React from 'react';
+import {
+  View,
+  TextInput,
+} from 'react-native';
+import PropTypes from 'prop-types';
+
+import styles from './styles';
+
+const Input = ({
+  value,
+  placeholder,
+  onChange,
+  containerStyles,
+  secure,
+  cleanError,
+}) => {
+  const handleOnChange = (text) => {
+    onChange(text);
+
+    if (cleanError) {
+      cleanError();
+    }
+  };
+
+  return (
+    <View>
+      <TextInput
+        style={[styles.input, containerStyles]}
+        placeholder={placeholder}
+        value={value}
+        onChangeText={(text) => handleOnChange(text)}
+        secureTextEntry={secure}
+        autoCapitalize="none"
+      />
+    </View>
+  );
+};
+
+Input.propTypes = {
+  value: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  containerStyles: PropTypes.object,
+  secure: PropTypes.bool,
+  cleanError: PropTypes.func,
+};
+
+Input.defaultProps = {
+  containerStyles: null,
+  secure: false,
+  cleanError: () => {},
+};
+
+export default Input;

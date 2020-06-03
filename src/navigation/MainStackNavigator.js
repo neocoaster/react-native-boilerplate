@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -7,6 +7,8 @@ import NetworkError from '../screens/NetworkError';
 import Welcome from '../screens/Welcome';
 import ScreenTwo from '../screens/ScreenTwo';
 import ScreenThree from '../screens/ScreenThree';
+import SignUp from '../screens/SignUp';
+import Login from '../screens/Login';
 
 import { HEADER_BACKGROUND, WHITE } from '../constants/colors';
 
@@ -34,6 +36,16 @@ const MainStackNavigator = () => {
           name='NetworkError'
           component={NetworkError}
           options={{ title: 'Network Error' }}
+        />
+        <Stack.Screen
+          name='Login'
+          component={Login}
+          options={{ title: 'Login' }}
+        />
+        <Stack.Screen
+          name='SignUp'
+          component={SignUp}
+          options={{ title: 'Sign Up' }}
         />
         <Stack.Screen
           name='Welcome'
