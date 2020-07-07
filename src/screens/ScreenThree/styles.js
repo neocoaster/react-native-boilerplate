@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 import { BLACK, WHITE } from '../../constants/colors';
 
@@ -11,7 +12,7 @@ export default StyleSheet.create({
   },
   text: {
     color: BLACK,
-    fontSize: 24,
+    fontSize: RFValue(24),
     fontWeight: 'bold',
   },
 });

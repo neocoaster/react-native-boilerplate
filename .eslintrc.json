@@ -51,7 +51,7 @@
       "always"
     ],
     "no-useless-constructor": 2,
-    "no-multi-spaces": 2,
+    "no-multi-spaces": 0,
     "no-nested-ternary": 2,
     "prefer-const": 2,
     "react/jsx-tag-spacing": [

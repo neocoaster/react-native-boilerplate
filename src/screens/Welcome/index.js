@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import {
   View,
@@ -6,19 +6,22 @@ import {
   SafeAreaView,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 import Button from '../../components/Button';
 
-import { fetchData } from '../../redux/appReducer/actions';
+import * as authActions from '../../redux/authReducer/actions';
 
 import styles from './styles';
 
 const Welcome = ({ navigation }) => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchData());
-  }, []);
+  const handleLogout = () => {
+    dispatch(authActions.signOutRequest());
+
+    navigation.replace('Login');
+  };
 
   const data = {
     title: 'Props Details',
@@ -41,6 +44,26 @@ const Welcome = ({ navigation }) => {
               ...data, // pass data between routes
             },
           )}
+          customStyles={{
+            button: {
+              alignItems: 'center',
+            },
+          }}
+        />
+
+        <Button
+          label="Logout"
+          onPress={() => handleLogout()}
+          customStyles={{
+            button: {
+              width: 100,
+              alignItems: 'center',
+              marginHorizontal: 100,
+            },
+            text: {
+              fontSize: RFValue(16),
+            },
+          }}
         />
       </View>
     </SafeAreaView>

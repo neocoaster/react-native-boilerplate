@@ -1,17 +1,27 @@
 import axios from 'axios';
-import applyConverters from 'axios-case-converter';
+// import applyConverters from 'axios-case-converter';
 import env from 'react-native-config';
+import { store } from '../redux';
 
 const axiosClient = () => {
-  const client = applyConverters(
-    axios.create({
-      baseURL: env.API_BASE_URL,
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    }),
-  );
+  const { token } = store.getState().authReducer;
+
+  let headers ={
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  };
+
+  if (token) {
+    headers = {
+      ...headers,
+      token,
+    };
+  }
+
+  const client = axios.create({
+    baseURL: env.API_BASE_URL,
+    headers,
+  });
 
   client.interceptors.response.use(
     (response) => response,

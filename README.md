@@ -69,6 +69,12 @@ Includes GET and POST endpoints examples. It's recommended to create a new file 
 - **[Axios Case Converter](https://www.npmjs.com/package/axios-case-converter)**
 Axios transformer/interceptor that converts snake_case to camelCase, useful for converting urls from the frontend to valid ones in the backend.
 
+- **[password-validator](https://www.npmjs.com/package/password-validator)**
+Used to validate the password on the authentication flow.
+
+- **[react-native-responsive-fontsize](https://www.npmjs.com/package/react-native-responsive-fontsize)**
+Makes font sizes responsive.
+
 - **[React Navigation v5.x](https://reactnavigation.org/)**
 Routing and navigation for your React Native apps
 
@@ -146,3 +152,17 @@ navigation.navigate('Dashboard', {
 In the above case, you're navigating to the Media screen, which is in a navigator nested inside the Sound screen, which is in a navigator nested inside the Files screen.
 
 Here you can found more information about [good practices](https://reactnavigation.org/docs/nesting-navigators/#best-practices-when-nesting) when nesting navigators.
+
+- **Splash Screnn and Icons**
+
+The app already has a splash screen configured, as well as a set of icons for iOS and Android.
+
+If you need to change the included icons you should do the following:
+- iOS: via Xcode, go to the `Images.xcassets`, create a new set of images named `AppIcon` and then drag your folder with the new icons. You can create your set of icons for iOS using: `https://appicon.co/`
+- Android: go to `android/app/src/main/res` and drag your set of folders with the new icons, you should have a set of `mipmap` folders, one for each resolution. You can create your set here: `https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html`, don't forget to create rounded ones. 
+
+
+# Authentication Flow Integrated with the Node Boilerplate
+
+This app comes with an authentication flow already integrated with our node boilerplate. The methods we provide are: Login, Sign up and Logout. The app does not show the `Welcome` screen if the user is not logged in and has a token stored on the device.
+

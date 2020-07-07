@@ -7,3 +7,7 @@ export const BUTTON_BACKGROUND = '#042152';
 
 // HEADER STYLES
 export const HEADER_BACKGROUND = '#042152';
+
+// ERRORS
+export const ERROR_TEXT = '#e60000';
+export const ERROR_BORDER = '#ff0000';
