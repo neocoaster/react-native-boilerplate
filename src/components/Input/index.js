@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  View,
-  TextInput,
-} from 'react-native';
+import { View, TextInput } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
@@ -14,6 +11,7 @@ const Input = ({
   containerStyles,
   secure,
   cleanError,
+  error,
 }) => {
   const handleOnChange = (text) => {
     onChange(text);
@@ -26,7 +24,7 @@ const Input = ({
   return (
     <View>
       <TextInput
-        style={[styles.input, containerStyles]}
+        style={[styles.input, containerStyles, error && styles.error]}
         placeholder={placeholder}
         value={value}
         onChangeText={(text) => handleOnChange(text)}
@@ -44,12 +42,14 @@ Input.propTypes = {
   containerStyles: PropTypes.object,
   secure: PropTypes.bool,
   cleanError: PropTypes.func,
+  error: PropTypes.bool,
 };
 
 Input.defaultProps = {
   containerStyles: null,
   secure: false,
   cleanError: () => {},
+  error: false,
 };
 
 export default Input;

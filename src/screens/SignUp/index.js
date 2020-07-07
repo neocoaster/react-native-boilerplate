@@ -33,37 +33,39 @@ const SignUp = ({ navigation }) => {
   const [passwordError, setPasswordError] = useState(false);
   const [passwordConfirmationError, setPasswordConfirmationError] = useState(false);
 
-  const [errorText, setErrorText] = useState('');
+  const [errorText, setErrorText] = useState([]);
 
   const dispatch = useDispatch();
 
   const handleSignUpPress = async () => {
     let submitError = false;
-    setErrorText('');
+    let newTextErrors = [];
 
     if (!username) {
       setUsernameError(true);
-      setErrorText('Must enter a username');
+      newTextErrors = [ ...newTextErrors, 'Must enter a username'];
       submitError = true;
     }
 
     if (!validateEmail(email)) {
       setEmailError(true);
-      setErrorText('Invalid Email');
+      newTextErrors = [ ...newTextErrors, 'Invalid Email'];
       submitError = true;
     }
 
     if (!checkConfirmationPassword(password, passwordConfirmation)) {
       setPasswordConfirmationError(true);
-      setErrorText('Passwords do not match');
+      newTextErrors = [ ...newTextErrors, 'Passwords do not match'];
       submitError = true;
     }
 
     if (!validatePassword(password)) {
       setPasswordError(true);
-      setErrorText('Must have one letter, one digit and min length 8 characters');
+      newTextErrors = [ ...newTextErrors, 'Must have one letter, one digit and min length 8 characters'];
       submitError = true;
     }
+
+    setErrorText(newTextErrors);
 
     if (!submitError) {
       const user = {
@@ -105,37 +107,53 @@ const SignUp = ({ navigation }) => {
         value={username}
         placeholder="Username"
         onChange={(text) => setUsername(text)}
-        cleanError={() => setUsernameError(false)}
+        cleanError={() => {
+          setErrorText([]);
+          setUsernameError(false);
+        }}
+        error={usernameError}
       />
 
       <Input
         value={email}
         placeholder="Email"
         onChange={(text) => setEmail(text)}
-        cleanError={() => setEmailError(false)}
+        cleanError={() => {
+          setErrorText([]);
+          setEmailError(false);
+        }}
+        error={emailError}
       />
 
       <Input
         value={password}
         placeholder="Password"
         onChange={(text) => setPassword(text)}
-        cleanError={() => setPasswordConfirmationError(false)}
+        cleanError={() => {
+          setErrorText([]);
+          setPasswordError(false);
+        }}
         secure={true}
+        error={passwordError}
       />
 
       <Input
         value={passwordConfirmation}
         placeholder="Confirm password"
         onChange={(text) => setPasswordConfirmation(text)}
-        cleanError={() => setPasswordConfirmationError(false)}
+        cleanError={() => {
+          setErrorText([]);
+          setPasswordConfirmationError(false);
+        }}
         secure={true}
+        error={passwordConfirmationError}
       />
 
       {
         (usernameError || emailError || passwordConfirmationError || passwordError) && (
           <View style={styles.errorContainer}>
             <Text style={styles.errorText}>
-              { errorText }
+              { errorText[0] }
             </Text>
           </View>
         )

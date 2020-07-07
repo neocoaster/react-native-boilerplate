@@ -24,7 +24,7 @@ function* signUp() {
 
       yield put(actions.signUp(data.user));
 
-      navigation.navigate('Login');
+      navigation.replace('Login');
     } catch (error) {
       Alert.alert('Something went wrong...');
     }

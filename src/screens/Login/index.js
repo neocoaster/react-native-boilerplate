@@ -15,27 +15,25 @@ import * as authActions from '../../redux/authReducer/actions';
 import styles from './styles';
 
 const Login = ({ navigation }) => {
+  const errorText = 'You must enter username and password';
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
-  const [errorText, setErrorText] = useState('');
 
   const dispatch = useDispatch();
 
   const handleLoginPress = async () => {
     let submitError = false;
-    setErrorText('');
 
-    if (!username) {
+    if (!username || (username && !username.trim())) {
       setUsernameError(true);
-      setErrorText('Invalid Username');
       submitError = true;
     }
 
-    if (!password) {
+    if (!password || (password && !password.trim())) {
       setPasswordError(true);
-      setErrorText('Invalid password');
       submitError = true;
     }
 
@@ -49,10 +47,7 @@ const Login = ({ navigation }) => {
     }
   };
 
-  const checkButtonDisabled = () => {
-    return username === '' ||
-      password === '';
-  };
+  const checkButtonDisabled = () => !(username || password);
 
   return (
     <View style={styles.container}>
@@ -63,6 +58,7 @@ const Login = ({ navigation }) => {
         placeholder="Username "
         onChange={(text) => setUsername(text)}
         cleanError={() => setUsernameError(false)}
+        error={usernameError}
       />
 
       <Input
@@ -71,6 +67,7 @@ const Login = ({ navigation }) => {
         onChange={(text) => setPassword(text)}
         cleanError={() => setPasswordError(false)}
         secure={true}
+        error={passwordError}
       />
 
       {
