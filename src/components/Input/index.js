@@ -15,10 +15,7 @@ const Input = ({
 }) => {
   const handleOnChange = (text) => {
     onChange(text);
-
-    if (cleanError) {
-      cleanError();
-    }
+    cleanError();
   };
 
   return (
