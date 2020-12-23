@@ -47,7 +47,7 @@ const Login = ({ navigation }) => {
     }
   };
 
-  const checkButtonDisabled = () => !(username || password);
+  const disabled = !(username && password);
 
   return (
     <View style={styles.container}>
@@ -89,7 +89,7 @@ const Login = ({ navigation }) => {
             alignItems: 'center',
           },
         }}
-        disabled={checkButtonDisabled()}
+        disabled={disabled}
       />
 
       <TouchableOpacity

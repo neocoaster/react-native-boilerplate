@@ -25,4 +25,8 @@ export default StyleSheet.create({
     fontSize: RFValue(12),
     textAlign: 'center',
   },
+  button: {
+    width: 150,
+    alignItems: 'center',
+  },
 });

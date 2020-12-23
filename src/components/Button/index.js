@@ -2,44 +2,34 @@ import React from 'react';
 import {
   Text,
   TouchableOpacity,
+  ViewPropTypes,
 } from 'react-native';
-import PropTypes from 'prop-types';
+import { string, bool, func } from 'prop-types';
 
 import styles from './styles';
 
 const Button = ({
   label,
-  customStyles,
-  onPress,
-  disabled,
-}) => {
-  const buttonStyle = [styles.buttonContainer, customStyles && customStyles.button];
-  const textStyle = [styles.buttonText, customStyles && customStyles.text];
-
-  return (
-    <TouchableOpacity
-      style={[buttonStyle, disabled && styles.buttonDisabled]}
-      onPress={onPress}
-      disabled={disabled}
-    >
-      <Text style={textStyle}>
-        {label}
-      </Text>
-    </TouchableOpacity>
-  );
-};
+  customStyles = null,
+  onPress = () => {},
+  disabled = false,
+}) => (
+  <TouchableOpacity
+    style={[styles.buttonContainer, customStyles && customStyles.button, disabled && styles.buttonDisabled]}
+    onPress={onPress}
+    disabled={disabled}
+  >
+    <Text style={[styles.buttonText, customStyles && customStyles.text]}>
+      {label}
+    </Text>
+  </TouchableOpacity>
+);
 
 Button.propTypes = {
-  label: PropTypes.string.isRequired,
-  customStyles: PropTypes.object,
-  onPress: PropTypes.func,
-  disabled: PropTypes.bool,
-};
-
-Button.defaultProps = {
-  customStyles: null,
-  onPress: () => {},
-  disabled: false,
+  label: string.isRequired,
+  customStyles: ViewPropTypes.styles,
+  onPress: func,
+  disabled: bool,
 };
 
 export default Button;

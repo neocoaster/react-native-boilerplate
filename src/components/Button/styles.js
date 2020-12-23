@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { RFValue } from 'react-native-responsive-fontsize';
 
-import { BUTTON_BACKGROUND, WHITE } from '../../constants/colors';
+import { BUTTON_BACKGROUND, WHITE, BUTTON_BACKGROUND_DISABLED } from '../../constants/colors';
 
 export default StyleSheet.create({
   buttonContainer: {
@@ -11,10 +10,10 @@ export default StyleSheet.create({
     margin: 20,
   },
   buttonDisabled: {
-    opacity: 0.6,
+    backgroundColor: BUTTON_BACKGROUND_DISABLED,
   },
   buttonText: {
-    fontSize: RFValue(20),
+    fontSize: 20,
     fontWeight: 'bold',
     color: WHITE,
   },
