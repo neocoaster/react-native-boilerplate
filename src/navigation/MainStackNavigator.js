@@ -16,10 +16,7 @@ const Stack = createStackNavigator();
 
 const MainStackNavigator = () => (
   <NavigationContainer>
-    <Stack.Navigator
-      initialRouteName="Welcome"
-      screenOptions={HEADER_OPTIONS}
-    >
+    <Stack.Navigator initialRouteName="AuthLoading" screenOptions={HEADER_OPTIONS}>
       <Stack.Screen
         name="AuthLoading"
         component={AuthLoading}
@@ -28,19 +25,9 @@ const MainStackNavigator = () => (
       <Stack.Screen name="NetworkError" component={NetworkError} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="SignUp" component={SignUp} />
-      <Stack.Screen
-        name="Welcome"
-        component={Welcome}
-      />
-      <Stack.Screen
-        name="ScreenTwo"
-        component={ScreenTwo}
-      />
-      <Stack.Screen
-        name="ScreenThree"
-        component={ScreenThree}
-        options={{ title: 'Screen 3' }}
-      />
+      <Stack.Screen name="Welcome" component={Welcome} />
+      <Stack.Screen name="ScreenTwo" component={ScreenTwo} />
+      <Stack.Screen name="ScreenThree" component={ScreenThree} />
     </Stack.Navigator>
   </NavigationContainer>
 );

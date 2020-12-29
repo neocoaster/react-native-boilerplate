@@ -15,7 +15,11 @@ const Button = ({
   disabled = false,
 }) => (
   <TouchableOpacity
-    style={[styles.buttonContainer, customStyles && customStyles.button, disabled && styles.buttonDisabled]}
+    style={[
+      styles.buttonContainer,
+      customStyles && customStyles.button,
+      disabled && styles.buttonDisabled,
+    ]}
     onPress={onPress}
     disabled={disabled}
   >
@@ -27,7 +31,10 @@ const Button = ({
 
 Button.propTypes = {
   label: string.isRequired,
-  customStyles: shape({ button: ViewPropTypes.style }),
+  customStyles: shape({
+    button: ViewPropTypes.style,
+    text: ViewPropTypes.style,
+  }),
   onPress: func,
   disabled: bool,
 };

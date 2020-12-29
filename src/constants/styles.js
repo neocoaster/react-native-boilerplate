@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+
 import { HEADER_BACKGROUND, BLACK, WHITE } from './colors';
 
 export const navigationStyles = StyleSheet.create({

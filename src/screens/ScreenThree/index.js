@@ -10,9 +10,7 @@ import styles from './styles';
 import { textStyles } from '../../constants/styles';
 
 const ScreenThree = () => {
-  useSetNavigationOptions({
-    headerTitle: 'Screen 3',
-  });
+  useSetNavigationOptions({ headerTitle: 'Screen 3' });
   const navigation = useNavigation();
 
   return (

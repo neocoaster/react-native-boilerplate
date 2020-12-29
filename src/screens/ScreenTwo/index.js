@@ -10,9 +10,7 @@ import styles from './styles';
 import { textStyles } from '../../constants/styles';
 
 const ScreenTwo = () => {
-  useSetNavigationOptions({
-    headerTitle: 'Screen 2',
-  });
+  useSetNavigationOptions({ headerTitle: 'Screen 2' });
 
   const route = useRoute();
   const navigation = useNavigation();
