@@ -55,7 +55,7 @@ const Login = ({ navigation }) => {
 
       <Input
         value={username}
-        placeholder="Username "
+        placeholder="Username"
         onChange={(text) => setUsername(text)}
         cleanError={() => setUsernameError(false)}
         error={usernameError}

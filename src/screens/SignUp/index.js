@@ -32,7 +32,6 @@ const SignUp = ({ navigation }) => {
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [passwordConfirmationError, setPasswordConfirmationError] = useState(false);
-
   const [errorText, setErrorText] = useState([]);
 
   const dispatch = useDispatch();
