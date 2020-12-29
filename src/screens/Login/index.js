@@ -83,12 +83,7 @@ const Login = ({ navigation }) => {
       <Button
         label="Login"
         onPress={() => handleLoginPress()}
-        customStyles={{
-          button: {
-            width: 150,
-            alignItems: 'center',
-          },
-        }}
+        customStyles={{ button: styles.button }}
         disabled={disabled}
       />
 

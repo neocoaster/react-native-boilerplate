@@ -4,13 +4,13 @@ import {
   TouchableOpacity,
   ViewPropTypes,
 } from 'react-native';
-import { string, bool, func } from 'prop-types';
+import { string, bool, func, shape } from 'prop-types';
 
 import styles from './styles';
 
 const Button = ({
   label,
-  customStyles = null,
+  customStyles,
   onPress = () => {},
   disabled = false,
 }) => (
@@ -27,7 +27,7 @@ const Button = ({
 
 Button.propTypes = {
   label: string.isRequired,
-  customStyles: ViewPropTypes.styles,
+  customStyles: shape({ button: ViewPropTypes.style }),
   onPress: func,
   disabled: bool,
 };

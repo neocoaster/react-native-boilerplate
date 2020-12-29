@@ -9,9 +9,9 @@ class authServices {
     return axiosClient().post('login', { ...credentials });
   };
 
-  // static signOut = () => {
-  //   return axiosClient().delete('users/sign_out');
-  // };
+  static signOut = () => {
+    return axiosClient().delete('users/sign_out');
+  };
 }
 
 export default authServices;

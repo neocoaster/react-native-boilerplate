@@ -6,16 +6,13 @@ import { store } from '../redux';
 const axiosClient = () => {
   const { token } = store.getState().authReducer;
 
-  let headers ={
+  const headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
   };
 
   if (token) {
-    headers = {
-      ...headers,
-      token,
-    };
+    headers.token = token;
   }
 
   const client = axios.create({
