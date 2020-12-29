@@ -4,17 +4,23 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
 import Button from '../../components/Button';
 import Input from '../../components/Input';
+import useSetNavigationOptions from '../../hooks/useSetNavigationOptions';
+
+import { useNavigation } from '@react-navigation/native';
 
 import * as authActions from '../../redux/authReducer/actions';
 
 import styles from './styles';
 
-const Login = ({ navigation }) => {
+const Login = () => {
+  useSetNavigationOptions({ headerTitle: 'Login' });
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
+
   const errorText = 'You must enter username and password';
 
   const [username, setUsername] = useState('');
@@ -22,9 +28,7 @@ const Login = ({ navigation }) => {
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
 
-  const dispatch = useDispatch();
-
-  const handleLoginPress = async () => {
+  const handleLoginPress = () => {
     let submitError = false;
 
     if (!username || (username && !username.trim())) {
@@ -43,7 +47,7 @@ const Login = ({ navigation }) => {
         password,
       };
 
-      await dispatch(authActions.signInRequest(credentials, navigation));
+      dispatch(authActions.signInRequest(credentials, navigation));
     }
   };
 
@@ -51,12 +55,12 @@ const Login = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Login</Text>
+      <Text style={styles.title}>Login</Text>
 
       <Input
         value={username}
         placeholder="Username"
-        onChange={(text) => setUsername(text)}
+        onChange={setUsername}
         cleanError={() => setUsernameError(false)}
         error={usernameError}
       />
@@ -64,7 +68,7 @@ const Login = ({ navigation }) => {
       <Input
         value={password}
         placeholder="Password"
-        onChange={(text) => setPassword(text)}
+        onChange={setPassword}
         cleanError={() => setPasswordError(false)}
         secure={true}
         error={passwordError}
@@ -74,7 +78,7 @@ const Login = ({ navigation }) => {
         (usernameError || passwordError) && (
           <View style={styles.errorContainer}>
             <Text style={styles.errorText}>
-              { errorText }
+              {errorText}
             </Text>
           </View>
         )
@@ -82,7 +86,7 @@ const Login = ({ navigation }) => {
 
       <Button
         label="Login"
-        onPress={() => handleLoginPress()}
+        onPress={handleLoginPress}
         customStyles={{ button: styles.button }}
         disabled={disabled}
       />
@@ -96,10 +100,6 @@ const Login = ({ navigation }) => {
       </TouchableOpacity>
     </View>
   );
-};
-
-Login.propTypes = {
-  navigation: PropTypes.object.isRequired,
 };
 
 export default Login;

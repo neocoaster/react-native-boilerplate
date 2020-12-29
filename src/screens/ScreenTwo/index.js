@@ -1,15 +1,22 @@
 import React from 'react';
-import {
-  View,
-  Text,
-} from 'react-native';
-import PropTypes from 'prop-types';
+import { View, Text } from 'react-native';
 
 import Button from '../../components/Button';
+import useSetNavigationOptions from '../../hooks/useSetNavigationOptions';
+
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 import styles from './styles';
+import { textStyles } from '../../constants/styles';
 
-const ScreenTwo = ({ route, navigation }) => {
+const ScreenTwo = () => {
+  useSetNavigationOptions({
+    headerTitle: 'Screen 2',
+  });
+
+  const route = useRoute();
+  const navigation = useNavigation();
+
   const {
     prop1,
     prop2,
@@ -18,7 +25,7 @@ const ScreenTwo = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Screen 2</Text>
+      <Text style={textStyles.title()}>Screen 2</Text>
       <View style={styles.card}>
         <Text style={styles.cardText}>Prop1: {prop1}</Text>
         <Text style={styles.cardText}>Prop2: {prop2}</Text>
@@ -31,11 +38,6 @@ const ScreenTwo = ({ route, navigation }) => {
       />
     </View>
   );
-};
-
-ScreenTwo.propTypes = {
-  navigation: PropTypes.object.isRequired,
-  route: PropTypes.object.isRequired,
 };
 
 export default ScreenTwo;

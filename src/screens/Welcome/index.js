@@ -5,16 +5,22 @@ import {
   Text,
   SafeAreaView,
 } from 'react-native';
-import PropTypes from 'prop-types';
-import { RFValue } from 'react-native-responsive-fontsize';
 
 import Button from '../../components/Button';
+import useSetNavigationOptions from '../../hooks/useSetNavigationOptions';
+
+import { useNavigation } from '@react-navigation/native';
 
 import * as authActions from '../../redux/authReducer/actions';
 
 import styles from './styles';
 
-const Welcome = ({ navigation }) => {
+const Welcome = () => {
+  const navigation = useNavigation();
+  useSetNavigationOptions({
+    headerTitle: 'Welcome Screen',
+    headerLeft: null,
+  });
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -33,45 +39,30 @@ const Welcome = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text style={styles.text}>
+        <Text style={styles.title}>
           Welcome
         </Text>
 
         <Button
           label={`See ${data.title}`}
-          onPress={() => navigation.navigate('ScreenTwo',
-            {
-              ...data, // pass data between routes
-            },
+          onPress={() => navigation.navigate('ScreenTwo', data,
           )}
           customStyles={{
-            button: {
-              alignItems: 'center',
-            },
+            button: styles.screen2Button,
           }}
         />
 
         <Button
           label="Logout"
-          onPress={() => handleLogout()}
+          onPress={handleLogout}
           customStyles={{
-            button: {
-              width: 100,
-              alignItems: 'center',
-              marginHorizontal: 100,
-            },
-            text: {
-              fontSize: RFValue(16),
-            },
+            button: styles.logoutButton,
+            text: styles.logoutText,
           }}
         />
       </View>
     </SafeAreaView>
   );
-};
-
-Welcome.propTypes = {
-  navigation: PropTypes.object.isRequired,
 };
 
 export default Welcome;

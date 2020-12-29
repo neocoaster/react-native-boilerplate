@@ -4,11 +4,13 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
+import useSetNavigationOptions from '../../hooks/useSetNavigationOptions';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
+
+import { useNavigation } from '@react-navigation/native';
 
 import * as authActions from '../../redux/authReducer/actions';
 
@@ -20,7 +22,10 @@ import {
 
 import styles from './styles';
 
-const SignUp = ({ navigation }) => {
+const SignUp = () => {
+  const navigation = useNavigation();
+  useSetNavigationOptions({ headerTitle: 'Sign Up' });
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');
@@ -83,7 +88,7 @@ const SignUp = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Sign Up</Text>
+      <Text style={styles.title}>Sign Up</Text>
 
       <Input
         value={firstName}
@@ -111,7 +116,7 @@ const SignUp = ({ navigation }) => {
       <Input
         value={email}
         placeholder="Email"
-        onChange={(text) => setEmail(text)}
+        onChange={setEmail}
         cleanError={() => {
           setErrorText([]);
           setEmailError(false);
@@ -122,7 +127,7 @@ const SignUp = ({ navigation }) => {
       <Input
         value={password}
         placeholder="Password"
-        onChange={(text) => setPassword(text)}
+        onChange={setPassword}
         cleanError={() => {
           setErrorText([]);
           setPasswordError(false);
@@ -169,10 +174,6 @@ const SignUp = ({ navigation }) => {
       </TouchableOpacity>
     </View>
   );
-};
-
-SignUp.propTypes = {
-  navigation: PropTypes.object.isRequired,
 };
 
 export default SignUp;

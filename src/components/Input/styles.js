@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { RFValue } from 'react-native-responsive-fontsize';
 
 import { BLACK, WHITE, ERROR_BORDER } from '../../constants/colors';
 
@@ -12,7 +11,7 @@ export default StyleSheet.create({
     paddingVertical: 14,
     paddingHorizontal: 16,
     color: BLACK,
-    fontSize: RFValue(18),
+    fontSize: 18,
     marginBottom: 10,
   },
   error: {

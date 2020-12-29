@@ -1,6 +1,7 @@
 // GENERAL
 export const BLACK = '#000000';
 export const WHITE = '#ffffff';
+export const TRANSPARENT = 'transparent';
 
 // BUTTON STYLES
 export const BUTTON_BACKGROUND = '#042152';
