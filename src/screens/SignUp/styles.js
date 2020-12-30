@@ -1,19 +1,12 @@
 import { StyleSheet } from 'react-native';
-import { RFValue } from 'react-native-responsive-fontsize';
 
-import { BLACK, ERROR_TEXT } from '../../constants/colors';
+import { ERROR_TEXT, TRANSPARENT } from '../../constants/colors';
+import { container, textStyles } from '../../constants/styles';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    color: BLACK,
-    fontSize: RFValue(24),
-    fontWeight: 'bold',
-    textAlign: 'center',
+  container: container(TRANSPARENT),
+  title: {
+    ...textStyles.title(),
     marginBottom: 50,
   },
   errorContainer: {
@@ -22,7 +15,11 @@ export default StyleSheet.create({
   },
   errorText: {
     color: ERROR_TEXT,
-    fontSize: RFValue(12),
+    fontSize: 12,
     textAlign: 'center',
+  },
+  button: {
+    width: 150,
+    alignItems: 'center',
   },
 });

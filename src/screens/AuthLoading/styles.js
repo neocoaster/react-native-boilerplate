@@ -1,14 +1,9 @@
 import { StyleSheet } from 'react-native';
 
-import { WHITE } from '../../constants/colors';
+import { container } from '../../constants/styles';
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    alignContent: 'center',
-    justifyContent: 'center',
-    backgroundColor: WHITE,
-  },
+  container: container(),
   logo: {
     width: '70%',
     alignSelf: 'center',

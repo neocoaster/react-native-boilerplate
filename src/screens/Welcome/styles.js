@@ -1,18 +1,20 @@
 import { StyleSheet } from 'react-native';
-import { RFValue } from 'react-native-responsive-fontsize';
 
-import { BLACK } from '../../constants/colors';
+import { TRANSPARENT } from '../../constants/colors';
+import { container, textStyles } from '../../constants/styles';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
+  container: container(TRANSPARENT),
+  title: textStyles.title(),
+  screen2Button: {
     alignItems: 'center',
   },
-  text: {
-    color: BLACK,
-    fontSize: RFValue(24),
-    fontWeight: 'bold',
-    textAlign: 'center',
+  logoutButton: {
+    width: 100,
+    alignItems: 'center',
+    marginHorizontal: 100,
+  },
+  logoutText: {
+    fontSize: 16,
   },
 });

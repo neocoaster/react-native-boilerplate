@@ -8,6 +8,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 import * as constants from './constants';
 import * as actions from './actions';
+
 import authServices from '../../services/authServices';
 
 function* signUp() {
@@ -62,7 +63,7 @@ function* signOut() {
     yield take(constants.SIGN_OUT_REQUEST);
 
     try {
-      // yield call(authServices.signOut);
+      yield call(authServices.signOut);
 
       yield put(actions.signOut());
 

@@ -1,27 +1,28 @@
 import { StyleSheet } from 'react-native';
-import { RFValue } from 'react-native-responsive-fontsize';
 
-import { BLACK, WHITE } from '../../constants/colors';
+import { BLACK } from '../../constants/colors';
+import { container } from '../../constants/styles';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    ...container,
     paddingHorizontal: 30,
-    backgroundColor: WHITE,
   },
   errorText: {
     color: BLACK,
     fontWeight: 'bold',
-    fontSize: RFValue(28),
+    fontSize: 28,
     marginBottom: 20,
   },
   retryText: {
     marginBottom: 20,
     color: BLACK,
-    fontSize: RFValue(20),
+    fontSize: 20,
     textAlign: 'center',
+  },
+  button: {
+    width: 110,
+    alignItems: 'center',
   },
 });
 

@@ -1,20 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { RFValue } from 'react-native-responsive-fontsize';
 
-import { BLACK, WHITE } from '../../constants/colors';
+import { BLACK } from '../../constants/colors';
+import { container } from '../../constants/styles';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: WHITE,
-  },
-  text: {
-    color: BLACK,
-    fontSize: RFValue(24),
-    fontWeight: 'bold',
-  },
+  container: container(),
   card: {
     width: 350,
     height: 100,
@@ -23,7 +13,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   cardText: {
-    fontSize: RFValue(18),
+    fontSize: 18,
     color: BLACK,
     marginBottom: 5,
   },

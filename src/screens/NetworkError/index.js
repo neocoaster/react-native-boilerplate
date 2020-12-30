@@ -1,15 +1,18 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import PropTypes from 'prop-types';
 
 import Button from '../../components/Button';
+import useSetNavigationOptions from '../../hooks/useSetNavigationOptions';
+
+import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles';
 
-const NetworkError = ({ navigation }) => {
-  const retryConnection = () => {
-    navigation.replace('Welcome');
-  };
+const NetworkError = () => {
+  const navigation = useNavigation();
+  useSetNavigationOptions({ headerTitle: 'Network Error' });
+
+  const retryConnection = () => navigation.replace('Welcome');
 
   return (
     <View style={styles.container}>
@@ -22,19 +25,10 @@ const NetworkError = ({ navigation }) => {
       <Button
         label="Retry"
         onPress={retryConnection}
-        customStyles={{
-          button: {
-            width: 110,
-            alignItems: 'center',
-          },
-        }}
+        customStyles={{ button: styles.button }}
       />
     </View>
   );
-};
-
-NetworkError.propTypes = {
-  navigation: PropTypes.object.isRequired,
 };
 
 export default NetworkError;

@@ -4,11 +4,13 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
+import useSetNavigationOptions from '../../hooks/useSetNavigationOptions';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
+
+import { useNavigation } from '@react-navigation/native';
 
 import * as authActions from '../../redux/authReducer/actions';
 
@@ -20,7 +22,10 @@ import {
 
 import styles from './styles';
 
-const SignUp = ({ navigation }) => {
+const SignUp = () => {
+  const navigation = useNavigation();
+  useSetNavigationOptions({ headerTitle: 'Sign Up' });
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');
@@ -36,13 +41,13 @@ const SignUp = ({ navigation }) => {
 
   const dispatch = useDispatch();
 
-  const handleSignUpPress = async () => {
+  const handleSignUpPress = () => {
     let submitError = false;
     let newTextErrors = [];
 
     if (!username) {
       setUsernameError(true);
-      newTextErrors = [ ...newTextErrors, 'Must enter a username'];
+      newTextErrors = ['Must enter a username'];
       submitError = true;
     }
 
@@ -79,33 +84,28 @@ const SignUp = ({ navigation }) => {
     }
   };
 
-  const checkButtonDisabled = () => {
-    return username === '' ||
-      email === '' ||
-      password === '' ||
-      passwordConfirmation === '';
-  };
+  const disabled = !(username && email && password && passwordConfirmation);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Sign Up</Text>
+      <Text style={styles.title}>Sign Up</Text>
 
       <Input
         value={firstName}
         placeholder="First Name"
-        onChange={(text) => setFirstName(text)}
+        onChange={setFirstName}
       />
 
       <Input
         value={lastName}
         placeholder="Last Name"
-        onChange={(text) => setLastName(text)}
+        onChange={setLastName}
       />
 
       <Input
         value={username}
         placeholder="Username"
-        onChange={(text) => setUsername(text)}
+        onChange={setUsername}
         cleanError={() => {
           setErrorText([]);
           setUsernameError(false);
@@ -116,7 +116,7 @@ const SignUp = ({ navigation }) => {
       <Input
         value={email}
         placeholder="Email"
-        onChange={(text) => setEmail(text)}
+        onChange={setEmail}
         cleanError={() => {
           setErrorText([]);
           setEmailError(false);
@@ -127,7 +127,7 @@ const SignUp = ({ navigation }) => {
       <Input
         value={password}
         placeholder="Password"
-        onChange={(text) => setPassword(text)}
+        onChange={setPassword}
         cleanError={() => {
           setErrorText([]);
           setPasswordError(false);
@@ -139,7 +139,7 @@ const SignUp = ({ navigation }) => {
       <Input
         value={passwordConfirmation}
         placeholder="Confirm password"
-        onChange={(text) => setPasswordConfirmation(text)}
+        onChange={setPasswordConfirmation}
         cleanError={() => {
           setErrorText([]);
           setPasswordConfirmationError(false);
@@ -152,7 +152,7 @@ const SignUp = ({ navigation }) => {
         (usernameError || emailError || passwordConfirmationError || passwordError) && (
           <View style={styles.errorContainer}>
             <Text style={styles.errorText}>
-              { errorText[0] }
+              {errorText[0]}
             </Text>
           </View>
         )
@@ -160,14 +160,9 @@ const SignUp = ({ navigation }) => {
 
       <Button
         label="Register!"
-        onPress={() => handleSignUpPress()}
-        customStyles={{
-          button: {
-            width: 150,
-            alignItems: 'center',
-          },
-        }}
-        disabled={checkButtonDisabled()}
+        onPress={handleSignUpPress}
+        customStyles={{ button: styles.button }}
+        disabled={disabled}
       />
 
       <TouchableOpacity
@@ -179,10 +174,6 @@ const SignUp = ({ navigation }) => {
       </TouchableOpacity>
     </View>
   );
-};
-
-SignUp.propTypes = {
-  navigation: PropTypes.object.isRequired,
 };
 
 export default SignUp;

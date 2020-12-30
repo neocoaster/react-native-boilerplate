@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
-import { Animated, StatusBar, View } from 'react-native';
-import PropTypes from 'prop-types';
+import { Animated, View } from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import splashLogo from '../../assets/images/neocoast-logo.png';
 
+import { useNavigation } from '@react-navigation/native';
+
 import styles from './styles';
 
-const AuthLoading = ({ navigation }) => {
+const AuthLoading = () => {
+  const navigation = useNavigation();
   const opacity = new Animated.Value(0);
 
   useEffect(() => {
@@ -27,21 +29,14 @@ const AuthLoading = ({ navigation }) => {
   }, [navigation, opacity]);
 
   return (
-    <>
-      <StatusBar barStyle="light-content" />
-      <View style={styles.background}>
-        <Animated.Image
-          style={{ ...styles.logo, opacity }}
-          source={splashLogo}
-          resizeMode="contain"
-        />
-      </View>
-    </>
+    <View style={styles.container}>
+      <Animated.Image
+        style={[styles.logo, { opacity }]}
+        source={splashLogo}
+        resizeMode="contain"
+      />
+    </View>
   );
-};
-
-AuthLoading.propTypes = {
-  navigation: PropTypes.object.isRequired,
 };
 
 export default AuthLoading;

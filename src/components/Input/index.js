@@ -24,7 +24,7 @@ const Input = ({
         style={[styles.input, containerStyles, error && styles.error]}
         placeholder={placeholder}
         value={value}
-        onChangeText={(text) => handleOnChange(text)}
+        onChangeText={handleOnChange}
         secureTextEntry={secure}
         autoCapitalize="none"
       />
