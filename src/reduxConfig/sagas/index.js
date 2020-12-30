@@ -1,5 +1,5 @@
-import appSagas from '@sagas/appSagas';
-import authSagas from '@sagas/authSagas';
+import appSagas from '../appReducer/sagas';
+import authSagas from '../authReducer/sagas';
 
 export default [
   ...appSagas,
