@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import SplashScreen from 'react-native-splash-screen';
 
-import { store, persistor } from './src/redux';
+import { store, persistor } from './src/reduxConfig';
 
 import MainStackNavigator from './src/navigation/MainStackNavigator';
 

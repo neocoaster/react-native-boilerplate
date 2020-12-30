@@ -11,7 +11,7 @@ import useSetNavigationOptions from '../../hooks/useSetNavigationOptions';
 
 import { useNavigation } from '@react-navigation/native';
 
-import * as authActions from '../../redux/authReducer/actions';
+import * as authActions from '../../reduxConfig/authReducer/actions';
 
 import styles from './styles';
 

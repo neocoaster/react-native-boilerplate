@@ -1,7 +1,7 @@
 import axios from 'axios';
 // import applyConverters from 'axios-case-converter';
 import env from 'react-native-config';
-import { store } from '../redux';
+import { store } from '../reduxConfig';
 
 const axiosClient = () => {
   const { token } = store.getState().authReducer;
