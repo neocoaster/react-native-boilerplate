@@ -2,7 +2,7 @@ import { persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
-import * as constants from './constants';
+import * as constants from '@reduxConstants';
 
 const initialState = {
   user: null,

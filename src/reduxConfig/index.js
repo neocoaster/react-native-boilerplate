@@ -6,8 +6,8 @@ import {
 import createSagaMiddleware from 'redux-saga';
 import { persistStore } from 'redux-persist';
 
-import appReducer from './appReducer';
-import authReducer from './authReducer';
+import appReducer from '@reducers/appReducer';
+import authReducer from '@reducers/authReducer';
 
 import rootSaga from './sagas';
 

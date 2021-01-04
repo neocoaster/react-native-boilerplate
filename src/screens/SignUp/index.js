@@ -12,7 +12,7 @@ import Input from '../../components/Input';
 
 import { useNavigation } from '@react-navigation/native';
 
-import * as authActions from '../../reduxConfig/authReducer/actions';
+import authActions from '@actions/authActions';
 
 import {
   checkConfirmationPassword,

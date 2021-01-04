@@ -5,10 +5,10 @@ import {
 } from 'redux-saga/effects';
 import { Alert } from 'react-native';
 
-import * as constants from './constants';
-import * as actions from './actions';
+import * as constants from '@reduxConstants';
+import * as actions from '@actions/appActions';
 
-import exampleServices from '../../services/exampleServices';
+import exampleServices from '@services/exampleServices';
 
 function* fetchData() {
   while (true) {
