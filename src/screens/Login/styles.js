@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
-import { ERROR_TEXT, TRANSPARENT } from '../../constants/colors';
-import { container, textStyles } from '../../constants/styles';
+import { ERROR_TEXT, TRANSPARENT } from '@constants/colors';
+import { container, textStyles } from '@constants/styles';
 
 export default StyleSheet.create({
   container: container(TRANSPARENT),

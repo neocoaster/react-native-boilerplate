@@ -3,7 +3,7 @@ import { Animated, View } from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import splashLogo from '../../assets/images/neocoast-logo.png';
+import splashLogo from '@assets/images/neocoast-logo.png';
 
 import { useNavigation } from '@react-navigation/native';
 

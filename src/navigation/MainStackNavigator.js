@@ -2,15 +2,15 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import AuthLoading from '../screens/AuthLoading';
-import NetworkError from '../screens/NetworkError';
-import Welcome from '../screens/Welcome';
-import ScreenTwo from '../screens/ScreenTwo';
-import ScreenThree from '../screens/ScreenThree';
-import SignUp from '../screens/SignUp';
-import Login from '../screens/Login';
+import AuthLoading from '@screens/AuthLoading';
+import NetworkError from '@screens/NetworkError';
+import Welcome from '@screens/Welcome';
+import ScreenTwo from '@screens/ScreenTwo';
+import ScreenThree from '@screens/ScreenThree';
+import SignUp from '@screens/SignUp';
+import Login from '@screens/Login';
 
-import { HEADER_OPTIONS } from '../constants/navigator';
+import { HEADER_OPTIONS } from '@constants/navigator';
 
 const Stack = createStackNavigator();
 

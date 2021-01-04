@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 import Button from '../../components/Button';
-import useSetNavigationOptions from '../../hooks/useSetNavigationOptions';
+import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
 
 import { useNavigation } from '@react-navigation/native';
 

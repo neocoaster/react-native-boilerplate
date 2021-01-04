@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import Button from '../../components/Button';
-import useSetNavigationOptions from '../../hooks/useSetNavigationOptions';
+import Button from '@components/Button';
+import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
 
 import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles';
-import { textStyles } from '../../constants/styles';
+import { textStyles } from '@constants/styles';
 
 const ScreenThree = () => {
   useSetNavigationOptions({ headerTitle: 'Screen 3' });

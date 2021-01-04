@@ -1,4 +1,4 @@
-import { WHITE } from '../constants/colors';
+import { WHITE } from '@constants/colors';
 import { navigationStyles } from './styles';
 
 export const HEADER_OPTIONS = {
