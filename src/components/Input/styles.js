@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { BLACK, WHITE, ERROR_BORDER } from '../../constants/colors';
+import { BLACK, WHITE, ERROR_BORDER } from '@constants/colors';
 
 export default StyleSheet.create({
   input: {

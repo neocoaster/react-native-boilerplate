@@ -6,10 +6,10 @@ import {
 import { Alert } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import * as constants from './constants';
-import * as actions from './actions';
+import * as constants from '@reduxConstants';
+import * as actions from '@actions/authActions';
 
-import authServices from '../../services/authServices';
+import authServices from '@services/authServices';
 
 function* signUp() {
   while (true) {

@@ -7,12 +7,12 @@ import {
 import { useDispatch } from 'react-redux';
 
 import useSetNavigationOptions from '../../hooks/useSetNavigationOptions';
-import Button from '../../components/Button';
-import Input from '../../components/Input';
+import Button from '@components/Button';
+import Input from '@components/Input';
 
 import { useNavigation } from '@react-navigation/native';
 
-import * as authActions from '../../reduxConfig/authReducer/actions';
+import authActions from '@actions/authActions';
 
 import {
   checkConfirmationPassword,

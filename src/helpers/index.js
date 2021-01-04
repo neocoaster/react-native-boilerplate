@@ -1,6 +1,6 @@
 import PasswordValidator from 'password-validator';
 
-import { validEmail } from '../constants/regex';
+import { validEmail } from '@constants/regex';
 
 export const checkConfirmationPassword = (password, passwordConfirmation) => (password === passwordConfirmation);
 
