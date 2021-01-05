@@ -12,7 +12,7 @@ import Input from '@components/Input';
 
 import { useNavigation } from '@react-navigation/native';
 
-import authActions from '@actions/authActions';
+import { signUpRequest } from '@actions/authActions';
 
 import {
   checkConfirmationPassword,
@@ -80,7 +80,7 @@ const SignUp = () => {
         password,
       };
 
-      dispatch(authActions.signUpRequest(user, navigation));
+      dispatch(signUpRequest(user, navigation));
     }
   };
 

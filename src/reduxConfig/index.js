@@ -2,6 +2,7 @@ import {
   createStore,
   combineReducers,
   applyMiddleware,
+  compose,
 } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { persistStore } from 'redux-persist';
@@ -18,17 +19,11 @@ const rootReducer = combineReducers({
 
 const sagaMiddleware = createSagaMiddleware();
 
-const middlewares = [
-  applyMiddleware(sagaMiddleware),
-];
-
-if (process.env.NODE_ENV !== 'production') {
-  middlewares.push(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-}
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const store = createStore(
   rootReducer,
-  applyMiddleware(sagaMiddleware),
+  composeEnhancers(applyMiddleware(sagaMiddleware)),
 );
 
 rootSaga.map((saga) => sagaMiddleware.run(saga));

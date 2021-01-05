@@ -12,7 +12,7 @@ import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
 
 import { useNavigation } from '@react-navigation/native';
 
-import authActions from '@actions/authActions';
+import { signInRequest } from '@actions/authActions';
 
 import styles from './styles';
 
@@ -47,7 +47,7 @@ const Login = () => {
         password,
       };
 
-      dispatch(authActions.signInRequest(credentials, navigation));
+      dispatch(signInRequest(credentials, navigation));
     }
   };
 

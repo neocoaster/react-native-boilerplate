@@ -11,7 +11,7 @@ import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
 
 import { useNavigation } from '@react-navigation/native';
 
-import authActions from '@actions/authActions';
+import { signOutRequest } from '@actions/authActions';
 
 import styles from './styles';
 
@@ -24,7 +24,7 @@ const Welcome = () => {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(authActions.signOutRequest());
+    dispatch(signOutRequest());
 
     navigation.replace('Login');
   };
