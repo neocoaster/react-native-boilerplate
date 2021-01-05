@@ -29,9 +29,31 @@ Used to validate the password on the authentication flow.
 - **[React Navigation v5.x](https://reactnavigation.org/)**
 Routing and navigation for your React Native apps
 
+- **[React Native Rename](https://www.npmjs.com/package/react-native-rename)**
+Rename react-native app with just one command
+
 ## Commands [TO DO]
 
-## Getting Started [TO DO]
+## Getting Started
+1. Install dependencies: `yarn install`
+2. Create a .env file in the root directory of the project. You can use the *.env.example* file to know which variables you need.
+3. Rename the project with **react-native-rename**
+4. Start the app: `yarn start`
+
+### Android
+Create a debug key in `android/app` with the command:
+```
+keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000
+```
+
+### iOS
+Run the following comman inside the **ios** folder:
+```
+pod install
+```
+
+**Command to rename the app:** `npx react-native-rename <newName> -b <bundleIdentifier>`  
+**Note:** After renaming the app you need to clean every **build folder** and remove **node_modules**
 
 ## Deployment [TO DO]
 
