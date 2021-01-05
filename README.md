@@ -36,11 +36,24 @@ Rename react-native app with just one command
 
 ## Getting Started
 1. Install dependencies: `yarn install`
-2. Create a .env file in the root directory of the project. You can use the `.env.example` file to know which variables you need.
-3. Rename the project with *react-native-rename*
+2. Create a .env file in the root directory of the project. You can use the *.env.example* file to know which variables you need.
+3. Rename the project with **react-native-rename**
 4. Start the app: `yarn start`
 
-*Command to rename the app:* `npx react-native-rename <newName> -b <bundleIdentifier>`
+### Android
+Create a debug key in `android/app` with the command:
+```
+keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000
+```
+
+### iOS
+Run the following comman inside the **ios** folder:
+```
+pod install
+```
+
+**Command to rename the app:** `npx react-native-rename <newName> -b <bundleIdentifier>`  
+**Note:** After renaming the app you need to clean every **build folder** and remove **node_modules**
 
 ## Deployment [TO DO]
 
