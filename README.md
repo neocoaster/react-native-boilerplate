@@ -29,9 +29,18 @@ Used to validate the password on the authentication flow.
 - **[React Navigation v5.x](https://reactnavigation.org/)**
 Routing and navigation for your React Native apps
 
+- **[React Native Rename](https://www.npmjs.com/package/react-native-rename)**
+Rename react-native app with just one command
+
 ## Commands [TO DO]
 
-## Getting Started [TO DO]
+## Getting Started
+1. Install dependencies: `yarn install`
+2. Create a .env file in the root directory of the project. You can use the `.env.example` file to know which variables you need.
+3. Rename the project with *react-native-rename*
+4. Start the app: `yarn start`
+
+*Command to rename the app:* `npx react-native-rename <newName> -b <bundleIdentifier>`
 
 ## Deployment [TO DO]
 
