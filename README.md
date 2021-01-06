@@ -32,7 +32,13 @@ Routing and navigation for your React Native apps
 - **[React Native Rename](https://www.npmjs.com/package/react-native-rename)**
 Rename react-native app with just one command
 
-## Commands [TO DO]
+## Commands
+
+1. **Start the app**: `yarn run android` or `yarn run ios`
+2. **Start metro bundler**: `yarn start`
+3. **Lint the app**: `yarn run lint`
+4. **Test the app**: `yarn run test`
+5. **Clean the app**: `yarn run clean`
 
 ## Getting Started
 1. Install dependencies: `yarn install`
