@@ -1,7 +1,3 @@
-import { persistReducer } from 'redux-persist';
-import AsyncStorage from '@react-native-community/async-storage';
-import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
-
 import * as constants from '@reduxConstants';
 
 const initialState = {
@@ -21,10 +17,4 @@ const appReducer = (state = initialState, { type, payload }) => {
   }
 };
 
-const appPersistConfig = {
-  key: 'app',
-  storage: AsyncStorage,
-  stateReconciler: autoMergeLevel2,
-};
-
-export default persistReducer(appPersistConfig, appReducer);
+export default appReducer;

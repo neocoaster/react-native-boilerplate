@@ -46,7 +46,7 @@ function* signIn() {
 
       yield put(actions.signIn(headers, data.user));
 
-      AsyncStorage.setItem('token', headers.token);
+      // AsyncStorage.setItem('token', headers.token);
       navigation.replace('Welcome');
     } catch (error) {
       if (error.status === 401) {

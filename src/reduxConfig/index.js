@@ -1,31 +1,36 @@
 import {
   createStore,
-  combineReducers,
   applyMiddleware,
   compose,
 } from 'redux';
+import AsyncStorage from '@react-native-community/async-storage';
 import createSagaMiddleware from 'redux-saga';
-import { persistStore } from 'redux-persist';
+import { persistStore, persistReducer } from 'redux-persist';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
-import appReducer from '@reducers/appReducer';
-import authReducer from '@reducers/authReducer';
+import AppReducer from '@reducers';
 
 import rootSaga from './sagas';
 
-const rootReducer = combineReducers({
-  appReducer,
-  authReducer,
-});
+const persistConfig = {
+  key: 'root',
+  storage: AsyncStorage,
+  stateReconciler: autoMergeLevel2,
+  whitelist: ['session', 'colorBar', 'paymentProfiles', 'address'],
+};
+
+const persistedReducer = persistReducer(persistConfig, AppReducer);
 
 const sagaMiddleware = createSagaMiddleware();
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const store = createStore(
-  rootReducer,
+  persistedReducer,
   composeEnhancers(applyMiddleware(sagaMiddleware)),
 );
 
 rootSaga.map((saga) => sagaMiddleware.run(saga));
+
 
 export const persistor = persistStore(store);

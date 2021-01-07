@@ -6,7 +6,7 @@ import SplashScreen from 'react-native-splash-screen';
 
 import { store, persistor } from './src/reduxConfig';
 
-import MainStackNavigator from './src/navigation/MainStackNavigator';
+import InitialStack from '@navigators';
 
 const App = () => {
   useEffect(() => {
@@ -15,9 +15,9 @@ const App = () => {
 
   return (
     <Provider store={store}>
+      <StatusBar barStyle="light-content" />
       <PersistGate persistor={persistor}>
-        <StatusBar barStyle="light-content" />
-        <MainStackNavigator />
+        <InitialStack />
       </PersistGate>
     </Provider>
   );
