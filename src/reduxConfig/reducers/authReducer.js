@@ -1,7 +1,3 @@
-import { persistReducer } from 'redux-persist';
-import AsyncStorage from '@react-native-community/async-storage';
-import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
-
 import * as constants from '@reduxConstants';
 
 const initialState = {
@@ -25,21 +21,11 @@ const authReducer = (state = initialState, { type, payload }) => {
       };
     }
     case constants.SIGN_OUT: {
-      return {
-        ...state,
-        user: null,
-        token: '',
-      };
+      return initialState;
     }
     default:
       return state;
   }
 };
 
-const authPersistConfig = {
-  key: 'auth',
-  storage: AsyncStorage,
-  stateReconciler: autoMergeLevel2,
-};
-
-export default persistReducer(authPersistConfig, authReducer);
+export default authReducer;
