@@ -21,21 +21,11 @@ const authReducer = (state = initialState, { type, payload }) => {
       };
     }
     case constants.SIGN_OUT: {
-      return {
-        ...state,
-        user: null,
-        token: '',
-      };
+      return initialState;
     }
     default:
       return state;
   }
 };
-
-// const authPersistConfig = {
-//   key: 'auth',
-//   storage: AsyncStorage,
-//   stateReconciler: autoMergeLevel2,
-// };
 
 export default authReducer;

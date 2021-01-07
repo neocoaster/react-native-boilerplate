@@ -16,7 +16,7 @@ const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
   stateReconciler: autoMergeLevel2,
-  whitelist: ['session', 'colorBar', 'paymentProfiles', 'address'],
+  whitelist: ['appReducer, authReducer'],
 };
 
 const persistedReducer = persistReducer(persistConfig, AppReducer);
@@ -31,6 +31,5 @@ export const store = createStore(
 );
 
 rootSaga.map((saga) => sagaMiddleware.run(saga));
-
 
 export const persistor = persistStore(store);

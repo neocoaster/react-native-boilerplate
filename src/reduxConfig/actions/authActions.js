@@ -10,9 +10,9 @@ export const signUp = (user) => ({
   payload: { user },
 });
 
-export const signInRequest = (credentials, navigation) => ({
+export const signInRequest = (credentials) => ({
   type: constants.SIGN_IN_REQUEST,
-  payload: { credentials, navigation },
+  payload: { credentials },
 });
 
 export const signIn = (headers, user) => ({

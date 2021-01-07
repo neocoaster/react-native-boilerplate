@@ -4,7 +4,6 @@ import {
   put,
 } from 'redux-saga/effects';
 import { Alert } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
 
 import * as constants from '@reduxConstants';
 import * as actions from '@actions/authActions';
@@ -37,7 +36,6 @@ function* signIn() {
     const {
       payload: {
         credentials,
-        navigation,
       },
     } = yield take(constants.SIGN_IN_REQUEST);
 
@@ -45,9 +43,6 @@ function* signIn() {
       const { data, headers } = yield call(authServices.signIn, credentials);
 
       yield put(actions.signIn(headers, data.user));
-
-      // AsyncStorage.setItem('token', headers.token);
-      navigation.replace('Welcome');
     } catch (error) {
       if (error.status === 401) {
         Alert.alert('Invalid credentials');
@@ -66,8 +61,6 @@ function* signOut() {
       yield call(authServices.signOut);
 
       yield put(actions.signOut());
-
-      AsyncStorage.removeItem('token');
     } catch ({ response }) {
       Alert.alert('Something went wrong...');
     }
