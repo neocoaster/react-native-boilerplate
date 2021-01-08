@@ -33,7 +33,7 @@ Button.propTypes = {
   label: string.isRequired,
   customStyles: shape({
     button: ViewPropTypes.style,
-    text: ViewPropTypes.style,
+    text: Text.propTypes.style,
   }),
   onPress: func,
   disabled: bool,

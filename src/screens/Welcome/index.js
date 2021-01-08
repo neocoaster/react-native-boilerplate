@@ -9,14 +9,13 @@ import {
 import Button from '../../components/Button';
 import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
 
-import { useNavigation } from '@react-navigation/native';
+import navigation from '@navigators/ref';
 
 import { signOutRequest } from '@actions/authActions';
 
 import styles from './styles';
 
 const Welcome = () => {
-  const navigation = useNavigation();
   useSetNavigationOptions({
     headerTitle: 'Welcome Screen',
     headerLeft: null,
