@@ -28,7 +28,7 @@ const middlewares = [sagaMiddleware, createLogger({})];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? (
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
     serialize: {
-      replacer: (key, value) => value && value.toJS ? value.toJS() : value,
+      replacer: (key, value) => value?.toJS ? value.toJS() : value,
     },
   })
 ) : compose;

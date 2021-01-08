@@ -32,6 +32,12 @@ Routing and navigation for your React Native apps
 - **[React Native Rename](https://www.npmjs.com/package/react-native-rename)**
 Rename react-native app with just one command
 
+- **[Neox](https://github.com/NeoCoast/Neox)**
+Makes redux state immutable
+
+- **[Redux Logger](https://github.com/LogRocket/redux-logger)**
+Production Redux logging tool that lets you replay problems as if they happened in your own browser.
+
 ## Commands
 
 1. **Start the app**: `yarn run android` or `yarn run ios`
