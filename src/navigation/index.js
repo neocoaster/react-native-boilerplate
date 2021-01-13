@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import MainStackNavigator from '@navigators/MainStackNavigator';
 import AuthStack from '@navigators/AuthStack';
 
+import { navigationRef } from '@navigators/ref';
 import { MAIN_STACK_NAVIGATOR, AUTH_STACK } from '@constants/screens';
 
 const Stack = createStackNavigator();
@@ -14,9 +15,9 @@ const InitialStack = () => {
   const { token } = useSelector(({ authReducer }) => authReducer.toJS());
 
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <Stack.Navigator headerMode="none">
-        {token ? (
+        {!token ? (
           <Stack.Screen name={MAIN_STACK_NAVIGATOR} component={MainStackNavigator} />
         ) : (
           <Stack.Screen name={AUTH_STACK} component={AuthStack} />
