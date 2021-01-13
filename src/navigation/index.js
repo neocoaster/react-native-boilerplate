@@ -11,7 +11,7 @@ import { MAIN_STACK_NAVIGATOR, AUTH_STACK } from '@constants/screens';
 const Stack = createStackNavigator();
 
 const InitialStack = () => {
-  const token = useSelector(({ authReducer: { token } }) => token);
+  const { token } = useSelector(({ authReducer }) => authReducer.toJS());
 
   return (
     <NavigationContainer>
