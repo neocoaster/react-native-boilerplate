@@ -11,21 +11,29 @@ import Login from '@screens/Login';
 
 import { navigationRef } from '@navigators/ref';
 import { HEADER_OPTIONS } from '@constants/navigator';
+import {
+  LOGIN_SCREEN,
+  SIGN_UP_SCREEN,
+  NETWORK_ERROR_SCREEN,
+  WELCOME_SCREEN,
+  SCREEN_TWO_SCREEN,
+  SCREEN_THREE_SCREEN,
+} from '@constants/screens';
 
 const Stack = createStackNavigator();
 
 const MainStack = () => (
   <NavigationContainer ref={navigationRef}>
     <Stack.Navigator
-      initialRouteName="Welcome"
+      initialRouteName={WELCOME_SCREEN}
       screenOptions={HEADER_OPTIONS}
     >
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="SignUp" component={SignUp} />
-      <Stack.Screen name="NetworkError" component={NetworkError} />
-      <Stack.Screen name="Welcome" component={Welcome} />
-      <Stack.Screen name="ScreenTwo" component={ScreenTwo} />
-      <Stack.Screen name="ScreenThree" component={ScreenThree} />
+      <Stack.Screen name={LOGIN_SCREEN} component={Login} />
+      <Stack.Screen name={SIGN_UP_SCREEN} component={SignUp} />
+      <Stack.Screen name={NETWORK_ERROR_SCREEN} component={NetworkError} />
+      <Stack.Screen name={WELCOME_SCREEN} component={Welcome} />
+      <Stack.Screen name={SCREEN_TWO_SCREEN} component={ScreenTwo} />
+      <Stack.Screen name={SCREEN_THREE_SCREEN} component={ScreenThree} />
     </Stack.Navigator>
   </NavigationContainer>
 );

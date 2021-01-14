@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 import Button from '@components/Button';
 import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
 
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { SCREEN_THREE_SCREEN } from '@constants/screens';
 
 import styles from './styles';
 import { textStyles } from '@constants/styles';
@@ -32,7 +33,7 @@ const ScreenTwo = () => {
 
       <Button
         label="Go to Screen 3"
-        onPress={() => navigation.navigate('ScreenThree')}
+        onPress={() => navigation.navigate(SCREEN_THREE_SCREEN)}
       />
     </View>
   );

@@ -5,6 +5,8 @@ import {
 } from 'redux-saga/effects';
 import { Alert } from 'react-native';
 
+import { LOGIN_SCREEN } from '@constants/screens';
+
 import * as constants from '@reduxConstants';
 import * as actions from '@actions/authActions';
 
@@ -24,7 +26,7 @@ function* signUp() {
 
       yield put(actions.signUp(data.user));
 
-      navigation.replace('Login');
+      navigation.replace(LOGIN_SCREEN);
     } catch (error) {
       Alert.alert('Something went wrong...');
     }

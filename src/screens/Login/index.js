@@ -1,25 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
   TouchableOpacity,
 } from 'react-native';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
 
 import Button from '@components/Button';
 import Input from '@components/Input';
 import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
 
-import { useNavigation } from '@react-navigation/native';
+import { SIGN_UP_SCREEN, WELCOME_SCREEN } from '@constants/screens';
 
-import { signInRequest } from '@actions/authActions';
+import { signInRequest, setAuthedScreen } from '@actions/authActions';
 
 import styles from './styles';
 
 const Login = () => {
   useSetNavigationOptions({ headerTitle: 'Login' });
+  const { token, authedScreen } = useSelector(({ authReducer }) => authReducer.toJS());
+
   const navigation = useNavigation();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (token) {
+      if (authedScreen) {
+        const { screen, params } = { ...authedScreen };
+
+        dispatch(setAuthedScreen(null));
+        navigation.replace(screen, params);
+      } else {
+        navigation.replace(WELCOME_SCREEN);
+      }
+    }
+  }, [token]);
 
   const errorText = 'You must enter username and password';
 
@@ -47,7 +63,7 @@ const Login = () => {
         password,
       };
 
-      dispatch(signInRequest(credentials, navigation));
+      dispatch(signInRequest(credentials));
     }
   };
 
@@ -92,7 +108,7 @@ const Login = () => {
       />
 
       <TouchableOpacity
-        onPress={() => navigation.navigate('SignUp')}
+        onPress={() => navigation.navigate(SIGN_UP_SCREEN)}
       >
         <Text>
           Don&apos;t have an account? Sign Up!

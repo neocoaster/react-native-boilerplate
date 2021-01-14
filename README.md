@@ -75,9 +75,10 @@ There are several examples of different types of navigations in different branch
 Uses a Stack Navigator [documentation](https://reactnavigation.org/docs/stack-navigator/#props).
 Uses an Auth-first navigation flow.
 
-#### Branch master--optional-auth [TO DO]
+#### Branch master--optional-auth
 Uses a simple Stack Navigator [documentation](https://reactnavigation.org/docs/stack-navigator/#props).
 Lets you navigate through the app without being authed, but certain features need to be accessed with auth.
+As an example of an authed screen you can see ScreenThree.
 
 ### Nested Navigators
 

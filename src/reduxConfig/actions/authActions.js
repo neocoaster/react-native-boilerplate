@@ -29,3 +29,8 @@ export const signOut = () => ({
   type: constants.SIGN_OUT,
   payload: null,
 });
+
+export const setAuthedScreen = (authedScreen) => ({
+  type: constants.SET_AUTHED_SCREEN,
+  payload: { authedScreen },
+});

@@ -6,12 +6,12 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-import Button from '../../components/Button';
+import Button from '@components/Button';
 import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
-
 import navigation from '@navigators/ref';
 
 import { signOutRequest } from '@actions/authActions';
+import { SCREEN_TWO_SCREEN, LOGIN_SCREEN } from '@constants/screens';
 
 import styles from './styles';
 
@@ -25,7 +25,7 @@ const Welcome = () => {
   const handleLogout = () => {
     dispatch(signOutRequest());
 
-    navigation.replace('Login');
+    navigation.reset(LOGIN_SCREEN);
   };
 
   const data = {
@@ -44,11 +44,8 @@ const Welcome = () => {
 
         <Button
           label={`See ${data.title}`}
-          onPress={() => navigation.navigate('ScreenTwo', data,
-          )}
-          customStyles={{
-            button: styles.screen2Button,
-          }}
+          onPress={() => navigation.navigate(SCREEN_TWO_SCREEN, data)}
+          customStyles={{ button: styles.screen2Button }}
         />
 
         <Button
