@@ -1,7 +1,5 @@
 // NAVIGATION
-export const INITIAL_STACK = 'InitialStack';
-export const MAIN_STACK_NAVIGATOR = 'MainStackNavigator';
-export const AUTH_STACK = 'AuthStack';
+export const MAIN_STACK = 'MainStack';
 
 export const LOGIN_SCREEN = 'LoginScreen';
 export const SIGN_UP_SCREEN = 'SignUpScreen';

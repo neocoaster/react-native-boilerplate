@@ -5,13 +5,13 @@ import {
 } from 'redux-saga/effects';
 import { Alert } from 'react-native';
 
-import navigation from '@navigators/ref';
-
 import { LOGIN_SCREEN } from '@constants/screens';
 
-import authServices from '@services/authServices';
+import navigation from '@navigators/ref';
 import * as constants from '@reduxConstants';
 import * as actions from '@actions/authActions';
+
+import authServices from '@services/authServices';
 
 function* signUp() {
   while (true) {
