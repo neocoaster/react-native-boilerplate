@@ -1,8 +1,8 @@
 import * as constants from './constants';
 
-export const signUpRequest = (user, navigation) => ({
+export const signUpRequest = (user) => ({
   type: constants.SIGN_UP_REQUEST,
-  payload: { user, navigation },
+  payload: { user },
 });
 
 export const signUp = (user) => ({

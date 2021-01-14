@@ -5,12 +5,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { useDispatch } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
 
 import Button from '@components/Button';
 import Input from '@components/Input';
 import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
 
-import { useNavigation } from '@react-navigation/native';
+import { SIGN_UP_SCREEN } from '@constants/screens';
 
 import { signInRequest } from '@actions/authActions';
 
@@ -92,7 +93,7 @@ const Login = () => {
       />
 
       <TouchableOpacity
-        onPress={() => navigation.navigate('SignUp')}
+        onPress={() => navigation.navigate(SIGN_UP_SCREEN)}
       >
         <Text>
           Don&apos;t have an account? Sign Up!
