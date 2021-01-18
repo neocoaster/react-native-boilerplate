@@ -106,10 +106,12 @@ Good practices when nesting navigators [good practices](https://reactnavigation.
 
 - **Splash Screnn and Icons**
 
-### Change Splash Screen  [TO DO]
+### Change Splash Screen
 You will notice both OS already have a Splash Screen set, so you just need to change it.
 
 #### Android
+- Remove the file `splash_screen` in every **mipmap** folder in `android/app/src/main/res`
+- Add your own `splash_screen` files in every different **mipmap** size folder
 
 #### IOS
 - Open Xcode and select `[project_name] > [project_name] > Imagex.xcassets`
