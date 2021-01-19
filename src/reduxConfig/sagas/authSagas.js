@@ -5,17 +5,19 @@ import {
 } from 'redux-saga/effects';
 import { Alert } from 'react-native';
 
-import * as constants from '@reduxConstants';
-import * as actions from '@actions/authActions';
+import navigation from '@navigators/ref';
+
+import { LOGIN_SCREEN } from '@constants/screens';
 
 import authServices from '@services/authServices';
+import * as constants from '@reduxConstants';
+import * as actions from '@actions/authActions';
 
 function* signUp() {
   while (true) {
     const {
       payload: {
         user,
-        navigation,
       },
     } = yield take(constants.SIGN_UP_REQUEST);
 
@@ -24,7 +26,7 @@ function* signUp() {
 
       yield put(actions.signUp(data.user));
 
-      navigation.replace('Login');
+      navigation.reset(LOGIN_SCREEN);
     } catch (error) {
       Alert.alert('Something went wrong...');
     }

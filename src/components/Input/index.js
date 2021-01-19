@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput } from 'react-native';
+import { TextInput } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
@@ -19,16 +19,14 @@ const Input = ({
   };
 
   return (
-    <View>
-      <TextInput
-        style={[styles.input, containerStyles, error && styles.error]}
-        placeholder={placeholder}
-        value={value}
-        onChangeText={handleOnChange}
-        secureTextEntry={secure}
-        autoCapitalize="none"
-      />
-    </View>
+    <TextInput
+      style={[styles.input, containerStyles, error && styles.error]}
+      placeholder={placeholder}
+      value={value}
+      onChangeText={handleOnChange}
+      secureTextEntry={secure}
+      autoCapitalize="none"
+    />
   );
 };
 

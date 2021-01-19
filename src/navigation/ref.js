@@ -6,9 +6,12 @@ const navigate = (name, params) => {
   navigationRef.current?.navigate(name, params);
 };
 
-const replace = (name, params) => {
-  navigationRef.current?.replace(name, params);
+const reset = (name) => {
+  navigationRef.current?.reset({
+    index: 0,
+    routes: [{ name }],
+  });
 };
 
-export default { navigate, replace };
+export default { navigate, reset };
 

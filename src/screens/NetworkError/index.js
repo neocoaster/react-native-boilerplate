@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import Button from '@components/Button';
 import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
 
-import { useNavigation } from '@react-navigation/native';
+import { WELCOME_SCREEN } from '@constants/screens';
 
 import styles from './styles';
 
@@ -12,7 +13,7 @@ const NetworkError = () => {
   const navigation = useNavigation();
   useSetNavigationOptions({ headerTitle: 'Network Error' });
 
-  const retryConnection = () => navigation.replace('Welcome');
+  const retryConnection = () => navigation.replace(WELCOME_SCREEN);
 
   return (
     <View style={styles.container}>
