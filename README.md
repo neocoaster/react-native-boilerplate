@@ -75,7 +75,7 @@ There are several examples of different types of navigations in different branch
 Uses a Stack Navigator [documentation](https://reactnavigation.org/docs/stack-navigator/#props).
 Uses an Auth-first navigation flow.
 
-#### Branch master--optional-auth [TO DO]
+#### Branch master--optional-auth
 Uses a simple Stack Navigator [documentation](https://reactnavigation.org/docs/stack-navigator/#props).
 Lets you navigate through the app without being authed, but certain features need to be accessed with auth.
 
@@ -106,10 +106,21 @@ Good practices when nesting navigators [good practices](https://reactnavigation.
 
 - **Splash Screnn and Icons**
 
-### Change Splash Screen  [TO DO]
+### Change Splash Screen
+You will notice both OS already have a Splash Screen set, so you just need to change it.
 
 #### Android
+- Remove the file `splash_screen` in every **mipmap** folder in `android/app/src/main/res`
+- Add your own `splash_screen` files in every different **mipmap** size folder
+
 #### IOS
+- Open Xcode and select `[project_name] > [project_name] > Imagex.xcassets`
+- In the SplashScreen Image Set, change the images to your project ones.
+- Select `[project_name] > [project_name] > LaunchScreen.xib`
+- Verify that the new image is correctly centered and adapt it to your needs.
+
+**Tip** When adjusting the image, go to the `Show Size Inspector` on the right drawer and select the *inner arrows* in the **Autoresizing Mask**
+
 
 ### Change Icons
 
