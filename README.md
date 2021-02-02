@@ -70,10 +70,11 @@ pod install
 ## Deployment
 
 ### Android
+The development/production key is used to ensure that you are a developer from the project. The .aab file on the other hand, short for 'Android App Bundle', is used to upload apps to Google Play.
 
 #### Create development/production key
 1. `cd android/app`
-2. 
+2.
 - if development environment:`keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000`
 - if production environment `keytool -genkey -v -keystore fc-production.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000`
 
@@ -81,7 +82,7 @@ pod install
 
 Before creating it, check the following:
 - You have the correct development/production key in `android/app`
-- Make sure you have the correct passwords set for the development/production key in `android/gradle.properties` (replace `******` with the passwords)
+- Make sure you have the correct configuration set in `android/.env`
 
 **Steps**
 1. Run the command `cd android && ./gradlew clean`
@@ -97,6 +98,8 @@ Before creating it, check the following:
 - Apple Development (for each Developer that will have access to deploy)
 - Apple Distribution (for the App)
 - iOS App Provisioning Profile (for the App)
+
+In order to create a certificate we need to create a .cer file is a security file provided by a third party Certificate Authority, used to validate you are who you say you are. Certificates are needed to upload to TestFlight for the same reason.
 
 #### Create a .cer File
 - Open your Keychain
