@@ -69,6 +69,29 @@ pod install
 
 ## Deployment [TO DO]
 
+###Android
+
+#### Create development/production key
+- `cd android/app`
+-
+if development environment:`keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000`
+if production environment `keytool -genkey -v -keystore fc-production.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000`
+
+####Create .aab file
+
+Before creating it, check the following:
+- You have the correct development/production key in `android/app`
+- Make sure you have the correct passwords set for the development/production key in `android/gradle.properties` (replace `******` with the passwords)
+
+**Steps**
+1. Run the command `cd android && ./gradlew clean`
+2. Go the root of the project and run `react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle`
+3. Bump versionCode by one and change versionNumber to suit your needs in `android/app/build.gradle`
+4. Run the command `./gradlew bundleRelease` (This creates the aab file)
+5. Go to Google Play Console and select the Release method of your preference
+6. Create a new release, and drag the new aab file (under android/app/build/outputs/bundle/release) into the build section.
+7. Save the build, and then send it to review (this will eliminate the previous version and upload this one)
+
 ## Navigation
 There are several examples of different types of navigations in different branches
 #### Branch master
