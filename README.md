@@ -67,17 +67,17 @@ pod install
 **Command to rename the app:** `npx react-native-rename <newName> -b <bundleIdentifier>`  
 **Note:** After renaming the app you need to clean every **build folder** and remove **node_modules**
 
-## Deployment [TO DO]
+## Deployment
 
-###Android
+### Android
 
 #### Create development/production key
-- `cd android/app`
--
-if development environment:`keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000`
-if production environment `keytool -genkey -v -keystore fc-production.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000`
+1. `cd android/app`
+2. 
+- if development environment:`keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000`
+- if production environment `keytool -genkey -v -keystore fc-production.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000`
 
-####Create .aab file
+#### Create .aab file
 
 Before creating it, check the following:
 - You have the correct development/production key in `android/app`
@@ -91,6 +91,34 @@ Before creating it, check the following:
 5. Go to Google Play Console and select the Release method of your preference
 6. Create a new release, and drag the new aab file (under android/app/build/outputs/bundle/release) into the build section.
 7. Save the build, and then send it to review (this will eliminate the previous version and upload this one)
+
+### iOS
+#### Certificates Needed to Upload to TestFlight
+- Apple Development (for each Developer that will have access to deploy)
+- Apple Distribution (for the App)
+- iOS App Provisioning Profile (for the App)
+
+#### Create a .cer File
+- Open your Keychain
+- Go to *KeychainAccess/CertificatesAssistant/Solicitar un Certificado de una Autoridad de Certificacion*
+- Fill in your name and email, and leave the *CA email* field empty
+- Save the file on disk and allow to change the location and hit next
+- Select the location where you want the file to be saved
+
+#### Create the certificates:
+- Create a .cer file
+- Go to developer.apple.com and on the left panel press on **Certificates, IDs & Profiles**.
+- Click on the plus sign to create the certificate which best suits your needs with the .cer file you just created
+- *Observation*: To create the Provisioning Profile, you need to go to the *Profiles* section and have already created the *Apple Distribution certificate*
+
+#### Deploy to TestFlight (from XCode)
+1. Select your target and in the *General* section, update your *Version* and *Build* accordingly
+2. In XCode select **Product/Destination/Any iOS device**
+3. In XCode select **Product/Archive**
+4. In the window that popped up (or go to **Window/Organizer**) select *Distribute App*
+5. Select *App Store Connect* then *Upload*, then uncheck both checks and press on *Next*
+6. Press on *Automatically Manage Signing* and then Next.
+7. In Apple Developer Connect you will notice the build will be uploading. When it finishes uploading, you will need to update a questionnaire (saying if it had any changes from the last time you uploaded a build)
 
 ## Navigation
 There are several examples of different types of navigations in different branches
