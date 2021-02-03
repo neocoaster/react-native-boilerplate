@@ -49,8 +49,9 @@ Production Redux logging tool that lets you replay problems as if they happened 
 ## Getting Started
 1. Install dependencies: `yarn install`
 2. Create a .env file in the root directory of the project. You can use the *.env.example* file to know which variables you need.
-3. Rename the project with **react-native-rename**
-4. Start the app: `yarn start`
+3. Create a .env file in the root android directory of the project. You can use the *.env.example* file to know which variables you need.
+4. Rename the project with **react-native-rename**
+5. Start the app: `yarn start`
 
 ### Android
 Create a debug key in `android/app` with the command:
