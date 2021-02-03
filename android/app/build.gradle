@@ -1,6 +1,7 @@
 apply plugin: "com.android.application"
 
 import com.android.build.OutputFile
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 /**
  * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
@@ -144,20 +145,20 @@ android {
     }
     signingConfigs {
         debug {
-          if (project.hasProperty('RN_BOILERPLATE_DEV_UPLOAD_STORE_FILE')) {
-              storeFile file(RN_BOILERPLATE_DEV_UPLOAD_STORE_FILE)
-              storePassword RN_BOILERPLATE_DEV_UPLOAD_STORE_PASSWORD
-              keyAlias RN_BOILERPLATE_DEV_UPLOAD_KEY_ALIAS
-              keyPassword RN_BOILERPLATE_DEV_UPLOAD_KEY_PASSWORD
+          if (file(project.env.get('DEV_STORE_FILE'))) {
+              storeFile file(project.env.get('DEV_STORE_FILE'))
+              storePassword project.env.get('DEV_STORE_PASSWORD')
+              keyAlias project.env.get('DEV_KEY_ALIAS')
+              keyPassword project.env.get('DEV_KEY_PASSWORD')
           }
         }
 
         release {
-            if (project.hasProperty('RN_BOILERPLATE_PROD_UPLOAD_STORE_FILE')) {
-                storeFile file(RN_BOILERPLATE_PROD_UPLOAD_STORE_FILE)
-                storePassword RN_BOILERPLATE_PROD_UPLOAD_STORE_PASSWORD
-                keyAlias RN_BOILERPLATE_PROD_UPLOAD_KEY_ALIAS
-                keyPassword RN_BOILERPLATE_PROD_UPLOAD_KEY_PASSWORD
+            if (file(project.env.get('PROD_STORE_FILE'))) {
+                storeFile file(project.env.get('PROD_STORE_FILE'))
+                storePassword project.env.get('PROD_STORE_PASSWORD')
+                keyAlias project.env.get('PROD_KEY_ALIAS')
+                keyPassword project.env.get('PROD_KEY_PASSWORD')
             }
         }
     }
