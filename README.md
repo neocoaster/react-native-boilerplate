@@ -136,7 +136,7 @@ Lets you navigate through the app without being authed, but certain features nee
 
 ### Nested Navigators
 
-#### Branch nested-tab-in-stack [TO DO]
+#### Branch nested-tab-in-stack
 Uses a Tab Navigator nested in a Stack Navigator [documentation](https://reactnavigation.org/docs/bottom-tab-navigator) [documentation] (https://reactnavigation.org/docs/nesting-navigators/).
 Uses an Auth-first navigation flow.
 

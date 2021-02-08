@@ -20,7 +20,7 @@ const ScreenTwo = () => {
     prop1,
     prop2,
     prop3,
-  } = route.params;
+  } = route.params || {};
 
   return (
     <View style={styles.container}>
