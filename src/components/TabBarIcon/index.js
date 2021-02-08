@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+import { WELCOME_STACK, ACCOUNT_SCREEN } from '@constants/screens';
+
 const TabBarIcon = ({
   routeName,
   focused,
@@ -11,11 +13,11 @@ const TabBarIcon = ({
   let iconName;
 
   switch (routeName) {
-    case 'Files':
+    case WELCOME_STACK:
       iconName = focused ? 'md-cloud' : 'md-cloud-outline';
       break;
-    case 'Account':
-      iconName = 'md-contact';
+    case ACCOUNT_SCREEN:
+      iconName = 'barbell';
       break;
     default:
       iconName = 'ios-options';
