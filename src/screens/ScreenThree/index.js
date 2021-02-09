@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import Button from '@components/Button';
 import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
 
-import styles from './styles';
+import useSession from '@hooks/useSession';
 import { textStyles } from '@constants/styles';
 import { WELCOME_SCREEN } from '@constants/screens';
+
+import styles from './styles';
 
 const ScreenThree = () => {
   useSetNavigationOptions({ headerTitle: 'Screen 3' });
   const navigation = useNavigation();
+
+  const { checkAuth } = useSession();
+
+  useEffect(() => {
+    checkAuth();
+  }, []);
 
   return (
     <View style={styles.container}>

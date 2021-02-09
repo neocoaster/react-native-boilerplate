@@ -5,6 +5,7 @@ import * as constants from '@reduxConstants';
 const initialState = fromJS({
   user: null,
   token: '',
+  authedScreen: '',
 });
 
 const authReducer = (state = initialState, { type, payload }) => {
@@ -19,6 +20,9 @@ const authReducer = (state = initialState, { type, payload }) => {
     }
     case constants.SIGN_OUT: {
       return initialState;
+    }
+    case constants.SET_AUTHED_SCREEN: {
+      return state.set('authedScreen', payload.authedScreen);
     }
     default:
       return state;
