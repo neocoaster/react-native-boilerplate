@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
   TouchableOpacity,
 } from 'react-native';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 
 import Button from '@components/Button';
 import Input from '@components/Input';
 import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
 
-import { SIGN_UP_SCREEN } from '@constants/screens';
+import { SIGN_UP_SCREEN, WELCOME_SCREEN, TAB_NAVIGATOR } from '@constants/screens';
 
-import { signInRequest } from '@actions/authActions';
+import { signInRequest, setAuthedScreen } from '@actions/authActions';
 
 import styles from './styles';
 
@@ -28,6 +28,29 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+
+  const { token, authedScreen } = useSelector(({ authReducer }) => authReducer.toJS());
+
+  useEffect(() => {
+    if (token) {
+      if (authedScreen) {
+        const { screen, params, stack } = { ...authedScreen };
+        dispatch(setAuthedScreen(null));
+        navigation.replace(TAB_NAVIGATOR, {
+          screen: stack,
+          params: {
+            screen,
+            params,
+          },
+        });
+      } else {
+        navigation.replace(TAB_NAVIGATOR, {
+          screen: WELCOME_SCREEN,
+        });
+      }
+    }
+  }, [token]);
+
 
   const handleLoginPress = () => {
     let submitError = false;

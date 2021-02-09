@@ -17,7 +17,7 @@ const TabBarIcon = ({
       iconName = focused ? 'md-cloud' : 'md-cloud-outline';
       break;
     case ACCOUNT_SCREEN:
-      iconName = 'md-contact';
+      iconName = 'barbell';
       break;
     default:
       iconName = 'ios-options';
