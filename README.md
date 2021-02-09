@@ -161,14 +161,14 @@ Good practices when nesting navigators [good practices](https://reactnavigation.
 
 - **Splash Screnn and Icons**
 
-### Change Splash Screen
+## Change Splash Screen
 You will notice both OS already have a Splash Screen set, so you just need to change it.
 
-#### Android
+### Android
 - Remove the file `splash_screen` in every **mipmap** folder in `android/app/src/main/res`
 - Add your own `splash_screen` files in every different **mipmap** size folder
 
-#### IOS
+### iOS
 - Open Xcode and select `[project_name] > [project_name] > Imagex.xcassets`
 - In the SplashScreen Image Set, change the images to your project ones.
 - Select `[project_name] > [project_name] > LaunchScreen.xib`
@@ -177,12 +177,13 @@ You will notice both OS already have a Splash Screen set, so you just need to ch
 **Tip** When adjusting the image, go to the `Show Size Inspector` on the right drawer and select the *inner arrows* in the **Autoresizing Mask**
 
 
-### Change Icons
+## Change Icons
 
-#### Android
-go to `android/app/src/main/res` and drag your set of folders with the new icons, you should have a set of `mipmap` folders, one for each resolution. You can create your set here: `https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html`, don't forget to create rounded ones.
+### Android
+go to `android/app/src/main/res` and drag your set of folders with the new icons, you should have a set of `mipmap` folders, one for each resolution.
+You can create your set here: `https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html`, don't forget to create rounded ones.  
 
-#### IOS
+### iOS
 Via Xcode, go to the `Images.xcassets`, create a new set of images named `AppIcon` and then drag your folder with the new icons. You can create your set of icons for iOS using: `https://appicon.co/`
 
 ## Authentication Flow Integrated with the Node Boilerplate
