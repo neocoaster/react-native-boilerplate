@@ -64,6 +64,7 @@ Run the following comman inside the **ios** folder:
 ```
 pod install
 ```
+### Rename App
 
 **Command to rename the app:** `npx react-native-rename <newName> -b <bundleIdentifier>`  
 **Note:** After renaming the app you need to clean every **build folder** and remove **node_modules**
@@ -133,16 +134,18 @@ Uses an Auth-first navigation flow.
 #### Branch master--optional-auth
 Uses a simple Stack Navigator [documentation](https://reactnavigation.org/docs/stack-navigator/#props).
 Lets you navigate through the app without being authed, but certain features need to be accessed with auth.
+As an example of an authed screen you can see ScreenThree.
 
 ### Nested Navigators
 
-#### Branch nested-tab-in-stack [TO DO]
+#### Branch nested-tab-in-stack
 Uses a Tab Navigator nested in a Stack Navigator [documentation](https://reactnavigation.org/docs/bottom-tab-navigator) [documentation] (https://reactnavigation.org/docs/nesting-navigators/).
 Uses an Auth-first navigation flow.
 
-#### Branch nested-tab-in-stack--optional-auth [TO DO]
+#### Branch nested-tab-in-stack--optional-auth
 Uses a Tab Navigator nested in a Stack Navigator [documentation](https://reactnavigation.org/docs/bottom-tab-navigator) [documentation] (https://reactnavigation.org/docs/nesting-navigators/).
 Lets you navigate through the app without being authed, but certain features need to be accessed with auth.
+As an example of an authed screen you can see ScreenThree.
 
 ***Nesting Navigators [Future nested-tab-in-stack branch]***
 
