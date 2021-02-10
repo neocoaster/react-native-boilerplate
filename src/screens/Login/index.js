@@ -51,7 +51,6 @@ const Login = () => {
     }
   }, [token]);
 
-
   const handleLoginPress = () => {
     let submitError = false;
 
