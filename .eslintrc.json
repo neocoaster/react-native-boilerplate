@@ -80,6 +80,7 @@
     "no-extra-bind": 2,
     "react/no-string-refs": 1,
     "react/no-did-mount-set-state": 1,
-    "react/no-did-update-set-state": 1
+    "react/no-did-update-set-state": 1,
+    "max-len": [2, 100, 4, {"ignoreUrls": true}]
   }
 }

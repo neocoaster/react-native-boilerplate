@@ -129,7 +129,7 @@ Uses a Stack Navigator. [documentation](https://reactnavigation.org/docs/stack-n
 Uses an Auth-first navigation flow.
 
 #### Branch master--optional-auth
-Uses a simple Stack Navigator. [documentation](https://reactnavigation.org/docs/stack-navigator/#props).
+Uses a simple Stack Navigator. [documentation](https://reactnavigation.org/docs/stack-navigator/#props)
 Lets you navigate through the app without being authed, but certain features need to be accessed with auth.
 As an example of an authed screen you can see ScreenThree.
 
@@ -140,7 +140,7 @@ Uses a Tab Navigator nested in a Stack Navigator. [documentation](https://reactn
 Uses an Auth-first navigation flow.
 
 #### Branch nested-tab-in-stack--optional-auth
-Uses a Tab Navigator nested in a Stack Navigator [documentation](https://reactnavigation.org/docs/bottom-tab-navigator)
+Uses a Tab Navigator nested in a Stack Navigator. [documentation](https://reactnavigation.org/docs/bottom-tab-navigator)
 Lets you navigate through the app without being authed, but certain features need to be accessed with auth.
 As an example of an authed screen you can see ScreenThree.
 
@@ -148,14 +148,16 @@ As an example of an authed screen you can see ScreenThree.
 
 In the branch `nesting-navigators` you can find an example of a tab navigator nested inside a stack navigator:
 
-- Stack.Navigator
-  - Screen 1 (Screen)
-  - Screen 2 (Screen)
-  - Screen 3 (Screen)
-  - Dashboard (Tab.Navigator)
-    - Account (Screen)
-    - Files
-    - Settings
+- MainStack (Stack)
+  - Modal Stack Navigator (Stack)
+  - Main Stack Navigator (Stack)
+    - Tan Navigator (Tab)
+      - Welcome Stack (Stack)
+        - Welcome Screen (Screen)
+        - Screen 2 (Screen)
+        - Screen 3 (Screen)
+      - Account (Screen)
+      - Settings (Screen)
 
 [Good practices](https://reactnavigation.org/docs/nesting-navigators/#best-practices-when-nesting) when nesting navigators
 
