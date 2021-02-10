@@ -10,7 +10,7 @@ import styles from './styles';
 
 const Button = ({
   label,
-  customStyles,
+  customStyles = {},
   onPress = () => {},
   disabled = false,
 }) => (

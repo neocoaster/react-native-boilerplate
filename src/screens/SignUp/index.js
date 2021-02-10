@@ -7,7 +7,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 
-import useSetNavigationOptions from '../../hooks/useSetNavigationOptions';
+import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
 import Button from '@components/Button';
 import Input from '@components/Input';
 
@@ -19,7 +19,7 @@ import {
   checkConfirmationPassword,
   validateEmail,
   validatePassword,
-} from '../../helpers';
+} from '@helpers';
 
 import styles from './styles';
 

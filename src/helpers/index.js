@@ -10,10 +10,10 @@ export const validatePassword = (password) => {
   const schema = new PasswordValidator();
 
   schema
-    .is().min(8) // Minimum length 8
-    .has().letters() // Must have letters
-    .has().digits() // Must have digits
-    .has().not().spaces(); // Should not have spaces
+    .is().min(8)
+    .has().letters()
+    .has().digits()
+    .has().not().spaces();
 
   return schema.validate(password);
 };
