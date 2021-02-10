@@ -1,6 +1,6 @@
 // GENERAL
 export const BLACK = '#000000';
-export const WHITE = '#ffffff';
+export const WHITE = '#FFF';
 export const TRANSPARENT = 'transparent';
 
 // BUTTON STYLES
@@ -11,5 +11,5 @@ export const BUTTON_BACKGROUND_DISABLED = '#6A87B8';
 export const HEADER_BACKGROUND = '#042152';
 
 // ERROR STYLES
-export const ERROR_TEXT = '#e60000';
-export const ERROR_BORDER = '#ff0000';
+export const ERROR_TEXT = '#E60000';
+export const ERROR_BORDER = '#F00';

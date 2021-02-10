@@ -7,7 +7,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 
-import useSetNavigationOptions from '../../hooks/useSetNavigationOptions';
+import useSetNavigationOptions from '@hooks/useSetNavigationOptions';
 import Button from '@components/Button';
 import Input from '@components/Input';
 
@@ -19,7 +19,7 @@ import {
   checkConfirmationPassword,
   validateEmail,
   validatePassword,
-} from '../../helpers';
+} from '@helpers';
 
 import styles from './styles';
 
@@ -66,7 +66,10 @@ const SignUp = () => {
 
     if (!validatePassword(password)) {
       setPasswordError(true);
-      newTextErrors = [ ...newTextErrors, 'Must have one letter, one digit and min length 8 characters'];
+      newTextErrors = [
+        ...newTextErrors,
+        'Must have one letter, one digit and min length 8 characters',
+      ];
       submitError = true;
     }
 

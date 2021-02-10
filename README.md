@@ -20,9 +20,6 @@ An opinionated code formatter supported by many languages.
 - **[Axios](https://www.npmjs.com/package/axios)**
 Promise based HTTP client for the browser and node.js. Includes GET and POST endpoints examples.
 
-- **[Axios Case Converter](https://www.npmjs.com/package/axios-case-converter)**
-Axios transformer/interceptor that converts snake_case to camelCase.
-
 - **[password-validator](https://www.npmjs.com/package/password-validator)**
 Used to validate the password on the authentication flow.
 
@@ -46,6 +43,9 @@ Production Redux logging tool that lets you replay problems as if they happened 
 4. **Test the app**: `yarn run test`
 5. **Clean the app**: `yarn run clean`
 
+**Command to rename the app:** `npx react-native-rename <newName> -b <bundleIdentifier>`  
+**Note:** After renaming the app you need to clean every **build folder** and remove **node_modules**
+
 ## Getting Started
 1. Install dependencies: `yarn install`
 2. Create a .env file in the root directory of the project. You can use the *.env.example* file to know which variables you need.
@@ -60,14 +60,11 @@ keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddeb
 ```
 
 ### iOS
-Run the following comman inside the **ios** folder:
+Run the following command inside the **ios** folder:
 ```
 pod install
 ```
 ### Rename App
-
-**Command to rename the app:** `npx react-native-rename <newName> -b <bundleIdentifier>`  
-**Note:** After renaming the app you need to clean every **build folder** and remove **node_modules**
 
 ## Deployment
 
@@ -128,41 +125,41 @@ In order to create a certificate we need to create a .cer file is a security fil
 ## Navigation
 There are several examples of different types of navigations in different branches
 #### Branch master
-Uses a Stack Navigator [documentation](https://reactnavigation.org/docs/stack-navigator/#props).
+Uses a Stack Navigator. [documentation](https://reactnavigation.org/docs/stack-navigator/#props).
 Uses an Auth-first navigation flow.
 
 #### Branch master--optional-auth
-Uses a simple Stack Navigator [documentation](https://reactnavigation.org/docs/stack-navigator/#props).
+Uses a simple Stack Navigator. [documentation](https://reactnavigation.org/docs/stack-navigator/#props)
 Lets you navigate through the app without being authed, but certain features need to be accessed with auth.
 As an example of an authed screen you can see ScreenThree.
 
 ### Nested Navigators
 
 #### Branch nested-tab-in-stack
-Uses a Tab Navigator nested in a Stack Navigator [documentation](https://reactnavigation.org/docs/bottom-tab-navigator) [documentation] (https://reactnavigation.org/docs/nesting-navigators/).
+Uses a Tab Navigator nested in a Stack Navigator. [documentation](https://reactnavigation.org/docs/bottom-tab-navigator)
 Uses an Auth-first navigation flow.
 
 #### Branch nested-tab-in-stack--optional-auth
-Uses a Tab Navigator nested in a Stack Navigator [documentation](https://reactnavigation.org/docs/bottom-tab-navigator) [documentation] (https://reactnavigation.org/docs/nesting-navigators/).
+Uses a Tab Navigator nested in a Stack Navigator. [documentation](https://reactnavigation.org/docs/bottom-tab-navigator)
 Lets you navigate through the app without being authed, but certain features need to be accessed with auth.
 As an example of an authed screen you can see ScreenThree.
 
-***Nesting Navigators [Future nested-tab-in-stack branch]***
+***Structure in nested-tab-in-stack branch]***
 
 In the branch `nesting-navigators` you can find an example of a tab navigator nested inside a stack navigator:
 
-- Stack.Navigator
-  - Screen 1 (Screen)
-  - Screen 2 (Screen)
-  - Screen 3 (Screen)
-  - Dashboard (Tab.Navigator)
-    - Account (Screen)
-    - Files
-    - Settings
+- MainStack (Stack)
+  - Modal Stack Navigator (Stack)
+  - Main Stack Navigator (Stack)
+    - Tan Navigator (Tab)
+      - Welcome Stack (Stack)
+        - Welcome Screen (Screen)
+        - Screen 2 (Screen)
+        - Screen 3 (Screen)
+      - Account (Screen)
+      - Settings (Screen)
 
-Good practices when nesting navigators [good practices](https://reactnavigation.org/docs/nesting-navigators/#best-practices-when-nesting)
-
-- **Splash Screnn and Icons**
+[Good practices](https://reactnavigation.org/docs/nesting-navigators/#best-practices-when-nesting) when nesting navigators
 
 ## Change Splash Screen
 You will notice both OS already have a Splash Screen set, so you just need to change it.
@@ -183,11 +180,12 @@ You will notice both OS already have a Splash Screen set, so you just need to ch
 ## Change Icons
 
 ### Android
-go to `android/app/src/main/res` and drag your set of folders with the new icons, you should have a set of `mipmap` folders, one for each resolution.
+go to `android/app/src/main/res` and drag your set of folders with the new icons, you should have a set of `mipmap` folders, one for each resolution.  
 You can create your set here: `https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html`, don't forget to create rounded ones.  
 
 ### iOS
-Via Xcode, go to the `Images.xcassets`, create a new set of images named `AppIcon` and then drag your folder with the new icons. You can create your set of icons for iOS using: `https://appicon.co/`
+Via Xcode, go to the `Images.xcassets`, create a new set of images named `AppIcon` and then drag your folder with the new icons.  
+You can create your set of icons for iOS using: `https://appicon.co/`
 
 ## Authentication Flow Integrated with the Node Boilerplate
 
