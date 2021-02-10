@@ -11,7 +11,6 @@ const useSession = () => {
   const navigation = useNavigation();
   const { token } = useSelector(({ authReducer }) => authReducer.toJS());
 
-
   const checkAuth = () => {
     if (token) return null;
 

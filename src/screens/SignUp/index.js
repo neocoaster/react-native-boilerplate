@@ -66,7 +66,10 @@ const SignUp = () => {
 
     if (!validatePassword(password)) {
       setPasswordError(true);
-      newTextErrors = [ ...newTextErrors, 'Must have one letter, one digit and min length 8 characters'];
+      newTextErrors = [
+        ...newTextErrors,
+        'Must have one letter, one digit and min length 8 characters',
+      ];
       submitError = true;
     }
 
