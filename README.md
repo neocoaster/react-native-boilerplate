@@ -3,25 +3,25 @@ React Native boilerplate that can be used to start a new mobile application.
 
 ## Content
 - **[Redux](https://redux.js.org/)**
-Redux is a predictable state container for JavaScript apps.
+Redux is a predictable state container for JavaScript apps
 
 - **[Redux Persistor](https://github.com/rt2zz/redux-persist)**
-Persist and rehydrate a redux store.
+Persist and rehydrate a redux store
 
 - **[Redux Sagas](https://redux-saga.js.org/)**
-Library that aims to make application side effects (i.e. asynchronous things like data fetching and impure things like accessing the browser cache) easier to manage, more efficient to execute, easy to test, and better at handling failures.
+Library that aims to make application side effects (i.e. asynchronous actions like data fetching and impure things like accessing the browser cache) easier to manage, more efficient to execute, easier to test, and better at handling failures
 
 - **[Eslint](https://eslint.org/)**
-Tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
+Tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs
 
 - **[Prettier](https://eslint.org/)**
-An opinionated code formatter supported by many languages.
+An opinionated code formatter supported by many languages
 
 - **[Axios](https://www.npmjs.com/package/axios)**
-Promise based HTTP client for the browser and node.js. Includes GET and POST endpoints examples.
+Promise based HTTP client for the browser and node.js. Includes GET and POST endpoints examples
 
 - **[password-validator](https://www.npmjs.com/package/password-validator)**
-Used to validate the password on the authentication flow.
+Used to validate the password on the authentication flow
 
 - **[React Navigation v5.x](https://reactnavigation.org/)**
 Routing and navigation for your React Native apps
@@ -33,7 +33,7 @@ Rename react-native app with just one command
 Makes redux state immutable
 
 - **[Redux Logger](https://github.com/LogRocket/redux-logger)**
-Production Redux logging tool that lets you replay problems as if they happened in your own browser.
+Production Redux logging tool that lets you replay problems as if they happened in your own browser
 
 ## Commands
 
@@ -64,7 +64,6 @@ Run the following command inside the **ios** folder:
 ```
 pod install
 ```
-### Rename App
 
 ## Deployment
 
@@ -89,7 +88,7 @@ Before creating it, check the following:
 3. Bump versionCode by one and change versionNumber to suit your needs in `android/app/build.gradle`
 4. Run the command `./gradlew bundleRelease` (This creates the aab file)
 5. Go to Google Play Console and select the Release method of your preference
-6. Create a new release, and drag the new aab file (under android/app/build/outputs/bundle/release) into the build section.
+6. Create a new release, and drag the new aab file (under android/app/build/outputs/bundle/release) into the build section
 7. Save the build, and then send it to review (this will eliminate the previous version and upload this one)
 
 ### iOS
@@ -98,7 +97,7 @@ Before creating it, check the following:
 - Apple Distribution (for the App)
 - iOS App Provisioning Profile (for the App)
 
-In order to create a certificate we need to create a .cer file is a security file provided by a third party Certificate Authority, used to validate you are who you say you are. Certificates are needed to upload to TestFlight for the same reason.
+In order to create a certificate we need to create a .cer file, which is a security file provided by a third party Certificate Authority, used to validate you are who you say you are. Certificates are needed to upload to TestFlight for the same reason.
 
 #### Create a .cer File
 - Open your Keychain
@@ -109,7 +108,7 @@ In order to create a certificate we need to create a .cer file is a security fil
 
 #### Create the certificates:
 - Create a .cer file
-- Go to developer.apple.com and on the left panel press on **Certificates, IDs & Profiles**.
+- Go to developer.apple.com and on the left panel press on **Certificates, IDs & Profiles**
 - Click on the plus sign to create the certificate which best suits your needs with the .cer file you just created
 - *Observation*: To create the Provisioning Profile, you need to go to the *Profiles* section and have already created the *Apple Distribution certificate*
 
@@ -118,14 +117,15 @@ In order to create a certificate we need to create a .cer file is a security fil
 2. In XCode select **Product/Destination/Any iOS device**
 3. In XCode select **Product/Archive**
 4. In the window that popped up (or go to **Window/Organizer**) select *Distribute App*
-5. Select *App Store Connect* then *Upload*, then uncheck both checks and press on *Next*
-6. Press on *Automatically Manage Signing* and then Next.
+5. Select *App Store Connect* then *Upload*, then uncheck both checkboxes and press on *Next*
+6. Press on *Automatically Manage Signing* and then Next
 7. In Apple Developer Connect you will notice the build will be uploading. When it finishes uploading, you will need to update a questionnaire (saying if it had any changes from the last time you uploaded a build)
 
 ## Navigation
-There are several examples of different types of navigations in different branches
+There are several examples of different types of navigations in different branches.
+
 #### Branch master
-Uses a Stack Navigator. [documentation](https://reactnavigation.org/docs/stack-navigator/#props).
+Uses a Stack Navigator. [documentation](https://reactnavigation.org/docs/stack-navigator/#props)
 Uses an Auth-first navigation flow.
 
 #### Branch master--optional-auth
@@ -170,17 +170,16 @@ You will notice both OS already have a Splash Screen set, so you just need to ch
 
 ### iOS
 - Open Xcode and select `[project_name] > [project_name] > Imagex.xcassets`
-- In the SplashScreen Image Set, change the images to your project ones.
+- In the SplashScreen Image Set, change the images to your project ones
 - Select `[project_name] > [project_name] > LaunchScreen.xib`
-- Verify that the new image is correctly centered and adapt it to your needs.
+- Verify that the new image is correctly centered and adapt it to your needs
 
 **Tip** When adjusting the image, go to the `Show Size Inspector` on the right drawer and select the *inner arrows* in the **Autoresizing Mask**
-
 
 ## Change Icons
 
 ### Android
-go to `android/app/src/main/res` and drag your set of folders with the new icons, you should have a set of `mipmap` folders, one for each resolution.  
+Go to `android/app/src/main/res` and drag your set of folders with the new icons, you should have a set of `mipmap` folders, one for each resolution.  
 You can create your set here: `https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html`, don't forget to create rounded ones.  
 
 ### iOS
@@ -190,4 +189,3 @@ You can create your set of icons for iOS using: `https://appicon.co/`
 ## Authentication Flow Integrated with the Node Boilerplate
 
 This app comes with an authentication flow already integrated with our node boilerplate. The methods we provide are: Login, Sign up and Logout. The app does not show the `Welcome` screen if the user is not logged in and has a token stored on the device.
-
