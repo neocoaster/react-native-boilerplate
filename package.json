@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint .",
     "clean": "react-native-clean-project",
-    "postinstall": "npx jetify && cd ios && pod install && cd .."
+    "postinstall": "npx jetify && cd ios && pod install && cd .. && patch-package"
   },
   "husky": {
     "hooks": {
@@ -26,6 +26,8 @@
     "axios": "^0.21.1",
     "babel-plugin-module-resolver": "^4.1.0",
     "password-validator": "^5.0.3",
+    "patch-package": "^6.2.2",
+    "postinstall-postinstall": "^2.1.0",
     "prop-types": "^15.7.2",
     "react": "16.9.0",
     "react-native": "0.61.5",
