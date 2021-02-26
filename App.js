@@ -10,7 +10,7 @@ import InitialStack from '@navigators';
 
 const App = () => {
   useEffect(() => {
-    SplashScreen.hide();
+    setTimeout(() => SplashScreen.hide(), 200);
   }, []);
 
   return (

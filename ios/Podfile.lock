@@ -189,7 +189,7 @@ PODS:
   - react-native-safe-area-context (1.0.0):
     - React
   - react-native-splash-screen (3.2.0):
-    - React
+    - React-Core
   - React-RCTActionSheet (0.61.5):
     - React-Core/RCTActionSheetHeaders (= 0.61.5)
   - React-RCTAnimation (0.61.5):
@@ -369,7 +369,7 @@ SPEC CHECKSUMS:
   react-native-config: 7db9b96479164dfd7b2be68eb9079e08279511c4
   react-native-netinfo: cb74e17062b2af5a16a4b137f32495f241df1a8e
   react-native-safe-area-context: a346c75f2288147527365ce27b59ca6d38c27805
-  react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
+  react-native-splash-screen: 682081d0a8a59b78c991e0844fa4a43c9f668a6b
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
   React-RCTBlob: d89293cc0236d9cb0933d85e430b0bbe81ad1d72
@@ -389,4 +389,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 7675ae8104c0b08128fbb9bb9006a4b4b4187516
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.8.4
