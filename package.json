@@ -29,8 +29,8 @@
     "patch-package": "^6.2.2",
     "postinstall-postinstall": "^2.1.0",
     "prop-types": "^15.7.2",
-    "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react": "^16.11.0",
+    "react-native": "^0.62.2",
     "react-native-clean-project": "^3.3.0",
     "react-native-config": "^1.0.0",
     "react-native-gesture-handler": "^1.6.1",
@@ -57,7 +57,7 @@
     "husky": "^4.2.3",
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.59.0",
-    "react-test-renderer": "16.9.0"
+    "react-test-renderer": "16.11.0"
   },
   "jest": {
     "preset": "react-native"
