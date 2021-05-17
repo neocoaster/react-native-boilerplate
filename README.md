@@ -171,7 +171,7 @@ You will notice both OS already have a Splash Screen set, so you just need to ch
 ### iOS
 - Open Xcode and select `[project_name] > [project_name] > Imagex.xcassets`
 - In the SplashScreen Image Set, change the images to your project ones
-- Select `[project_name] > [project_name] > LaunchScreen.xib`
+- Select `[project_name] > [project_name] > LaunchScreen.storyboard`
 - Verify that the new image is correctly centered and adapt it to your needs
 
 **Tip** When adjusting the image, go to the `Show Size Inspector` on the right drawer and select the *inner arrows* in the **Autoresizing Mask**
